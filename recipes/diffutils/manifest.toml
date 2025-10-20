@@ -1,0 +1,5 @@
+name = "diffutils"
+version = "3.12"
+release = 1
+dependencies = []
+source = "https://ftp.gnu.org/gnu/diffutils/diffutils-3.12.tar.xz"
