@@ -1,0 +1,5 @@
+name = "less"
+version = "679"
+release = 1
+dependencies = []
+source = "https://www.greenwoodsoftware.com/less/less-679.tar.gz"
