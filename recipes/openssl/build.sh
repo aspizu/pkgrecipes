@@ -5,4 +5,4 @@
          zlib-dynamic
 make
 sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
-make MANSUFFIX=ssl install
+make DESTDIR=$DESTDIR MANSUFFIX=ssl install
