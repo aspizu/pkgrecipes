@@ -3,7 +3,7 @@ sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
 make -f Makefile-libbz2_so
 make clean
 make
-make PREFIX=/usr install
+make PREFIX=$DESTDIR/usr install
 mkdir -p $DESTDIR/usr/{bin,lib}
 cp -av libbz2.so.* $DESTDIR/usr/lib
 ln -sv libbz2.so.1.0.8 $DESTDIR/usr/lib/libbz2.so
