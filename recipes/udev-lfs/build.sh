@@ -1,1 +1,1 @@
-make DESTDIR=$DESTDIR -f udev-lfs-20230818/Makefile.lfs install
+make -f Makefile.lfs DESTDIR=$DESTDIR install
