@@ -2,4 +2,4 @@ name = "coreutils"
 version = "9.8"
 release = 1
 dependencies = []
-source = "https://cgit.git.savannah.gnu.org/cgit/coreutils.git/snapshot/coreutils-9.8.tar.gz"
+source = "https://ftp.gnu.org/gnu/coreutils/coreutils-9.8.tar.xz"
