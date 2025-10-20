@@ -98,11 +98,18 @@ def build(package: str, interactive: bool) -> None:
     env = os.environ.copy()
     env["DESTDIR"] = build_dir.as_posix()
     subprocess.run(args, check=True, cwd=source_dir, env=env)
+    build_name = manifest.fullname() + ".tar.zst"
     args = [
         "/usr/bin/tar",
         "-acf",
-        TMP / "builds" / (manifest.fullname() + ".tar.zst"),
+        TMP / "builds" / build_name,
         ".",
+    ]
+    subprocess.run(args, check=True, cwd=build_dir)
+    args = [
+        "/usr/bin/bash",
+        "-c",
+        f'/usr/bin/tar -tf "{build_name}" | cut -c2- | /usr/bin/tree --fromfile .\ndu -h "{build_name}"',
     ]
     subprocess.run(args, check=True, cwd=build_dir)
 
