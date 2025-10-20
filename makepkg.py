@@ -44,7 +44,6 @@ def parse_args() -> Namespace:
     )
     subparsers = argparser.add_subparsers(dest="command")
     build = subparsers.add_parser("build", aliases=["b"], help="Build the package")
-    build.set_defaults(name="build")
     build.add_argument("package", help="Name of the package to build")
     build.add_argument(
         "-i",
@@ -59,7 +58,6 @@ def parse_args() -> Namespace:
     wizard = subparsers.add_parser(
         "wizard", aliases=["w"], help="Create a new package recipe"
     )
-    wizard.set_defaults(name="wizard")
     wizard.add_argument("name", help="Name of the new package")
     wizard.add_argument("version", help="Version of the new package")
     wizard.add_argument(
