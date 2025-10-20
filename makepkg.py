@@ -111,7 +111,7 @@ def build(package: str, interactive: bool) -> None:
         "-c",
         f'/usr/bin/tar -tf "{build_name}" | cut -c2- | /usr/bin/tree --fromfile .\ndu -h "{build_name}"',
     ]
-    subprocess.run(args, check=True, cwd=build_dir)
+    subprocess.run(args, check=True, cwd=TMP / "builds")
 
 
 def upload(destination: str) -> None:
