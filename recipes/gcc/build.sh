@@ -19,3 +19,9 @@ cd build
 make
 make install
 ln -sr /usr/bin/cpp $DESTDIR/usr/lib
+ln -s gcc $DESTDIR/usr/bin/cc
+ln -s gcc.1 $DESTDIR/usr/share/man/man1/cc.1
+ln -sf ../../libexec/gcc/$(gcc -dumpmachine)/15.2.0/liblto_plugin.so \
+        $DESTDIR/usr/lib/bfd-plugins/
+mkdir -pv $DESTDIR/usr/share/gdb/auto-load/usr/lib
+mv -v $DESTDIR/usr/lib/*gdb.py $DESTDIR/usr/share/gdb/auto-load/usr/lib
