@@ -22,16 +22,24 @@ class Manifest:
         return f"{self.name}-{self.version}-{self.release}"
 
 
+TMP = Path("/tmp/makepkg")
+
+
 def main() -> None:
+    global TMP
     Path("/tmp/makepkg/sources").mkdir(parents=True, exist_ok=True)
     Path("/tmp/makepkg/builds").mkdir(parents=True, exist_ok=True)
     args = vars(parse_args())
     command = args.pop("command")
+    TMP = Path(args.pop("tmp"))
     globals()[command](**args)
 
 
 def parse_args() -> Namespace:
     argparser = argparse.ArgumentParser()
+    argparser.add_argument(
+        "--tmp", help="Temporary directory to use", default="/tmp/makepkg"
+    )
     subparsers = argparser.add_subparsers(dest="command")
     build = subparsers.add_parser("build", help="Build the package")
     build.add_argument("package", help="Name of the package to build")
@@ -64,19 +72,19 @@ def build(package: str, interactive: bool) -> None:
     with (path / "manifest.toml").open("rb") as f:
         manifest = Manifest(**tomllib.load(f))
     args = ["/usr/bin/wget", "-c", manifest.source]
-    subprocess.run(args, check=True, cwd="/tmp/makepkg/sources")
+    subprocess.run(args, check=True, cwd=TMP / "sources")
     source_name = manifest.source.rsplit("/", 1)[-1]
     output = subprocess.check_output(
-        ["/usr/bin/tar", "-tf", source_name], cwd="/tmp/makepkg/sources"
+        ["/usr/bin/tar", "-tf", source_name], cwd=TMP / "sources"
     )
     files = output.decode().splitlines()
     files.sort()
     source_stem = files[0].removesuffix("/")
-    source_dir = f"/tmp/makepkg/sources/{source_stem}"
+    source_dir = TMP / "sources" / source_stem
     shutil.rmtree(source_dir, ignore_errors=True)
     args = ["/usr/bin/tar", "-xf", source_name]
-    subprocess.run(args, check=True, cwd="/tmp/makepkg/sources")
-    build_dir = Path(f"/tmp/makepkg/builds/{manifest.fullname()}")
+    subprocess.run(args, check=True, cwd=TMP / "sources")
+    build_dir = TMP / "builds" / manifest.fullname()
     shutil.rmtree(build_dir, ignore_errors=True)
     build_dir.mkdir(parents=True)
     for patch in path.glob("*.patch"):
@@ -93,7 +101,7 @@ def build(package: str, interactive: bool) -> None:
     args = [
         "/usr/bin/tar",
         "-acf",
-        f"/tmp/makepkg/builds/{manifest.fullname()}.tar.zst",
+        TMP / "builds" / (manifest.fullname() + ".tar.zst"),
         ".",
     ]
     subprocess.run(args, check=True, cwd=build_dir)
@@ -109,14 +117,14 @@ def upload(destination: str) -> None:
         "--progress",
         "--exclude=*",
         "--include=*.tar.zst",
-        "/tmp/makepkg/builds/",
+        TMP / "builds",
         destination,
     ]
     subprocess.run(args, check=True)
 
 
 def release(destination: str) -> None:
-    with open("/tmp/makepkg/index.toml", "w") as f:
+    with (TMP / "index.toml").open("w") as f:
         for package in Path("recipes").glob("*/manifest.toml"):
             f.write(f"[{package.parent.name}]\n")
             f.write(package.read_text())
@@ -127,7 +135,7 @@ def release(destination: str) -> None:
         "--update",
         "--human-readable",
         "--progress",
-        "/tmp/makepkg/index.toml",
+        TMP / "index.toml",
         destination,
     ]
     subprocess.run(args, check=True)
