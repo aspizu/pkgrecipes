@@ -115,9 +115,9 @@ def upload(destination: str) -> None:
         "--update",
         "--human-readable",
         "--progress",
-        "--exclude=*",
         "--include=*.tar.zst",
-        TMP / "builds",
+        "--exclude=*",
+        f"{TMP}/builds/",
         destination,
     ]
     subprocess.run(args, check=True)
