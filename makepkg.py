@@ -66,7 +66,12 @@ def build(package: str, interactive: bool) -> None:
     args = ["/usr/bin/wget", "-c", manifest.source]
     subprocess.run(args, check=True, cwd="/tmp/makepkg/sources")
     source_name = manifest.source.rsplit("/", 1)[-1]
-    source_stem = source_name.rsplit(".", 1)[0].removesuffix(".tar")
+    output = subprocess.check_output(
+        ["/usr/bin/tar", "-tf", source_name], cwd="/tmp/makepkg/sources"
+    )
+    files = output.decode().splitlines()
+    files.sort()
+    source_stem = files[0].removesuffix("/")
     source_dir = f"/tmp/makepkg/sources/{source_stem}"
     shutil.rmtree(source_dir, ignore_errors=True)
     args = ["/usr/bin/tar", "-xf", source_name]
@@ -78,6 +83,7 @@ def build(package: str, interactive: bool) -> None:
         args = ["/usr/bin/patch", "-Np1", "-i", patch]
         subprocess.run(args, check=True, cwd=source_dir)
     if interactive:
+        print("Entering interactive shell. Type 'exit' to continue the build process.")
         args = ["/usr/bin/bash", "-i"]
     else:
         args = ["/usr/bin/bash", "-e", path / "build.sh"]
