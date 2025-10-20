@@ -52,7 +52,11 @@ def parse_args() -> Namespace:
         "-d", "--dependencies", nargs="*", help="List of package dependencies"
     )
     wizard.add_argument("-s", "--source", help="Source URL for the package")
-    return argparser.parse_args()
+    args = argparser.parse_args()
+    if args.command is None:
+        argparser.print_help()
+        exit(1)
+    return args
 
 
 def build(package: str, interactive: bool) -> None:
