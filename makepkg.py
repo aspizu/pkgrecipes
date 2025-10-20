@@ -173,9 +173,9 @@ def wizard(name: str, version: str, dependencies: list[str], source: str) -> Non
 
 def strip(cwd: str) -> None:
     script = """
-    for i in $(find /usr/lib -type f -name \\*.so* ! -name \\*dbg) \
-            $(find /usr/lib -type f -name \\*.a)                 \
-            $(find /usr/{bin,sbin,libexec} -type f); do
+    for i in $(find ./usr/lib -type f -name \\*.so* ! -name \\*dbg) \
+            $(find ./usr/lib -type f -name \\*.a)                 \
+            $(find ./usr/{bin,sbin,libexec} -type f); do
         strip --strip-debug "$i"
     done
     """
