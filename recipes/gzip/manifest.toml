@@ -1,0 +1,5 @@
+name = "gzip"
+version = "1.14"
+release = 1
+dependencies = []
+source = "https://ftp.gnu.org/gnu/gzip/gzip-1.14.tar.xz"
