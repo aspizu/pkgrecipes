@@ -169,7 +169,7 @@ def wizard(name: str, version: str, dependencies: list[str], source: str) -> Non
     with (path / "build.sh").open("w") as f:
         f.write("./configure --prefix=/usr\n")
         f.write("make\n")
-        f.write("make install\n")
+        f.write("make install-strip\n")
 
 
 if __name__ == "__main__":
