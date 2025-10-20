@@ -1,3 +1,3 @@
 perl Makefile.PL
 make
-make install-strip
+make install
