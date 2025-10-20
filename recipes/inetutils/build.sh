@@ -11,4 +11,5 @@ sed -i 's/def HAVE_TERMCAP_TGETENT/ 1/' telnet/telnet.c
             --disable-servers
 make
 make install-strip
+mkdir -p $DESTDIR/usr/sbin
 mv $DESTDIR/usr/{,s}bin/ifconfig
