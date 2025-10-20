@@ -1,0 +1,5 @@
+name = "readline"
+version = "8.3"
+release = 1
+dependencies = []
+source = "https://ftp.gnu.org/gnu/readline/readline-8.3.tar.gz"
