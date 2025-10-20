@@ -172,13 +172,13 @@ def wizard(name: str, version: str, dependencies: list[str], source: str) -> Non
 
 
 def strip(cwd: str) -> None:
-    script = """
-    for i in $(find ./usr/lib -type f -name \\*.so* ! -name \\*dbg) \
-            $(find ./usr/lib -type f -name \\*.a)                 \
-            $(find ./usr/{bin,sbin,libexec} -type f); do
-        strip --strip-debug "$i"
-    done
-    """
+    script = """\
+for dir in ./usr/lib ./usr/bin ./usr/sbin ./usr/libexec; do
+    [[ -d "$dir" ]] || continue
+    find "$dir" -type f \\( -name '*.so*' ! -name '*dbg' -o -name '*.a' \\) \\
+        -exec strip --strip-debug {} +
+done
+"""
     args = ["/usr/bin/bash", "-c", script]
     subprocess.run(args, cwd=cwd)
 
