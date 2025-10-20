@@ -18,6 +18,7 @@ cd build
              --with-system-zlib
 make
 make install
+mkdir -p $DESTDIR/usr/lib/bfd-plugins
 ln -sr /usr/bin/cpp $DESTDIR/usr/lib
 ln -s gcc $DESTDIR/usr/bin/cc
 ln -s gcc.1 $DESTDIR/usr/share/man/man1/cc.1
