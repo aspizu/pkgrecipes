@@ -1,0 +1,5 @@
+name = "sysvinit"
+version = "3.14"
+release = 1
+dependencies = []
+source = "https://github.com/slicer69/sysvinit/releases/download/3.14/sysvinit-3.14.tar.xz"
