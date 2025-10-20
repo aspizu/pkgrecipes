@@ -1,0 +1,5 @@
+name = "texinfo"
+version = "7.2"
+release = 1
+dependencies = []
+source = "https://ftp.gnu.org/gnu/texinfo/texinfo-7.2.tar.xz"
