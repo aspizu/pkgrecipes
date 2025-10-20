@@ -20,6 +20,7 @@ ninja udevadm systemd-hwdb                                           \
       $(ninja -n | grep -Eo '(src/(lib)?udev|rules.d|hwdb.d)/[^ ]*') \
       $(realpath libudev.so --relative-to .)                         \
       $udev_helpers
+install -vm755 -d $DESTDIR/usr/{bin,sbin,include}
 install -vm755 -d $DESTDIR{/usr/lib,/etc}/udev/{hwdb.d,rules.d,network}
 install -vm755 -d $DESTDIR/usr/{lib,share}/pkgconfig
 install -vm755 udevadm                             $DESTDIR/usr/bin/
