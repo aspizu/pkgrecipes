@@ -180,7 +180,7 @@ def strip(cwd: str) -> None:
     done
     """
     args = ["/usr/bin/bash", "-c", script]
-    subprocess.run(args, check=True, cwd=cwd)
+    subprocess.run(args, cwd=cwd)
 
 
 if __name__ == "__main__":
