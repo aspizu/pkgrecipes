@@ -41,7 +41,7 @@ def parse_args() -> Namespace:
         "--tmp", help="Temporary directory to use", default="/tmp/makepkg"
     )
     subparsers = argparser.add_subparsers(dest="command")
-    build = subparsers.add_parser("build", help="Build the package")
+    build = subparsers.add_parser("build", aliases=["b"], help="Build the package")
     build.add_argument("package", help="Name of the package to build")
     build.add_argument(
         "-i",
@@ -53,7 +53,9 @@ def parse_args() -> Namespace:
     upload.add_argument("destination", help="Destination to upload packages to")
     release = subparsers.add_parser("release", help="Generate and release a new index")
     release.add_argument("destination", help="Destination to upload index to")
-    wizard = subparsers.add_parser("wizard", help="Create a new package recipe")
+    wizard = subparsers.add_parser(
+        "wizard", aliases=["w"], help="Create a new package recipe"
+    )
     wizard.add_argument("name", help="Name of the new package")
     wizard.add_argument("version", help="Version of the new package")
     wizard.add_argument(
