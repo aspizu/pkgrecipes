@@ -24,15 +24,17 @@ class Manifest:
 
 TMP = Path("/tmp/makepkg")
 
+aliases = {"b": "build", "w": "wizard"}
+
 
 def main() -> None:
     global TMP
     Path("/tmp/makepkg/sources").mkdir(parents=True, exist_ok=True)
     Path("/tmp/makepkg/builds").mkdir(parents=True, exist_ok=True)
     args = vars(parse_args())
-    command = args.pop("command")
+    command: str = args.pop("command")
     TMP = Path(args.pop("tmp"))
-    globals()[command](**args)
+    globals()[aliases.get(command, command)](**args)
 
 
 def parse_args() -> Namespace:
@@ -42,6 +44,7 @@ def parse_args() -> Namespace:
     )
     subparsers = argparser.add_subparsers(dest="command")
     build = subparsers.add_parser("build", aliases=["b"], help="Build the package")
+    build.set_defaults(name="build")
     build.add_argument("package", help="Name of the package to build")
     build.add_argument(
         "-i",
@@ -56,6 +59,7 @@ def parse_args() -> Namespace:
     wizard = subparsers.add_parser(
         "wizard", aliases=["w"], help="Create a new package recipe"
     )
+    wizard.set_defaults(name="wizard")
     wizard.add_argument("name", help="Name of the new package")
     wizard.add_argument("version", help="Version of the new package")
     wizard.add_argument(
