@@ -1,0 +1,5 @@
+name = "procps-ng"
+version = "4.0.5"
+release = 1
+dependencies = []
+source = "https://sourceforge.net/projects/procps-ng/files/Production/procps-ng-4.0.5.tar.xz"
