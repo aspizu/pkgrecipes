@@ -1,3 +1,3 @@
 perl Makefile.PL INSTALLDIRS=vendor
 make
-make install
+make DESTDIR=$DESTDIR install
