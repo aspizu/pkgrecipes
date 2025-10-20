@@ -17,7 +17,7 @@ cd build
              --disable-fixincludes    \
              --with-system-zlib
 make
-make install
+make install-strip
 mkdir -p $DESTDIR/usr/lib/bfd-plugins
 ln -sr /usr/bin/cpp $DESTDIR/usr/lib
 ln -s gcc $DESTDIR/usr/bin/cc
