@@ -60,7 +60,7 @@ def parse_args() -> Namespace:
 
 
 def build(package: str, interactive: bool) -> None:
-    path = Path("recipes") / package
+    path = Path("recipes").absolute() / package
     with (path / "manifest.toml").open("rb") as f:
         manifest = Manifest(**tomllib.load(f))
     args = ["/usr/bin/wget", "-c", manifest.source]
