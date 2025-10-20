@@ -102,6 +102,7 @@ def build(package: str, interactive: bool) -> None:
     env = os.environ.copy()
     env["DESTDIR"] = build_dir.as_posix()
     subprocess.run(args, check=True, cwd=source_dir, env=env)
+    strip(build_dir.as_posix())
     build_name = manifest.fullname() + ".tar.zst"
     args = [
         "/usr/bin/tar",
@@ -168,6 +169,18 @@ def wizard(name: str, version: str, dependencies: list[str], source: str) -> Non
         f.write("./configure --prefix=/usr\n")
         f.write("make\n")
         f.write("make install-strip\n")
+
+
+def strip(cwd: str) -> None:
+    script = """
+    for i in $(find /usr/lib -type f -name \\*.so* ! -name \\*dbg) \
+            $(find /usr/lib -type f -name \\*.a)                 \
+            $(find /usr/{bin,sbin,libexec} -type f); do
+        strip --strip-debug "$i"
+    done
+    """
+    args = ["/usr/bin/bash", "-c", script]
+    subprocess.run(args, check=True, cwd=cwd)
 
 
 if __name__ == "__main__":
