@@ -1,0 +1,5 @@
+name = "e2fsprogs"
+version = "1.47.3"
+release = 1
+dependencies = []
+source = "https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.47.3/e2fsprogs-1.47.3.tar.gz"
