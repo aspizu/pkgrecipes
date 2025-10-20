@@ -1,0 +1,5 @@
+name = "gperf"
+version = "8.39"
+release = 1
+dependencies = []
+source = "https://ftp.gnu.org/gnu/gperf/gperf-3.3.tar.gz"
