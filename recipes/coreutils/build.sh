@@ -1,3 +1,5 @@
+autoreconf -fv
+automake -af
 FORCE_UNSAFE_CONFIGURE=1 ./configure --prefix=/usr --enable-no-install-program=kill,uptime
 make
 make DESTDIR=$DESTDIR install
