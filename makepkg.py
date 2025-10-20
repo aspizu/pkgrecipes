@@ -79,7 +79,7 @@ def build(package: str, interactive: bool) -> None:
     )
     files = output.decode().splitlines()
     files.sort()
-    source_stem = files[0].removesuffix("/")
+    source_stem = files[0].split("/", 1)[0]
     source_dir = TMP / "sources" / source_stem
     shutil.rmtree(source_dir, ignore_errors=True)
     args = ["/usr/bin/tar", "-xf", source_name]
