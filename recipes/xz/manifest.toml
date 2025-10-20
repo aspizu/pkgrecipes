@@ -1,0 +1,5 @@
+name = "xz"
+version = "5.8.1"
+release = 1
+dependencies = []
+source = "https://tukaani.org/xz/xz-5.8.1.tar.gz"
