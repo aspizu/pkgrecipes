@@ -1,0 +1,5 @@
+name = "configuration"
+version = "1.0.0"
+release = 1
+dependencies = []
+source = "/null.tar.gz"

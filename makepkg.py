@@ -75,31 +75,35 @@ def build(package: str, interactive: bool) -> None:
     path = Path("recipes").absolute() / package
     with (path / "manifest.toml").open("rb") as f:
         manifest = Manifest(**tomllib.load(f))
-    args = ["/usr/bin/wget", "-c", manifest.source]
+    nulldir = manifest.source == "/null.tar.gz"
+    if nulldir:
+        args = ["/usr/bin/tar", "-acf", "null.tar.gz", "-T", "/dev/null"]
+    else:
+        args = ["/usr/bin/wget", "-c", manifest.source]
     subprocess.run(args, check=True, cwd=TMP / "sources")
     source_name = manifest.source.rsplit("/", 1)[-1]
     output = subprocess.check_output(
         ["/usr/bin/tar", "-tf", source_name], cwd=TMP / "sources"
     )
     files = output.decode().splitlines()
-    if '/' not in files[0]:
-        source_stem=source_name.rsplit('.', 1)[0].removesuffix('.tar')
-        source_dir = TMP/'sources'/source_stem
+    if not nulldir and "/" not in files[0]:
+        source_stem = source_name.rsplit(".", 1)[0].removesuffix(".tar")
+        source_dir = TMP / "sources" / source_stem
         shutil.rmtree(source_dir, ignore_errors=True)
         source_dir.mkdir(755)
         args = ["/usr/bin/tar", "-xf", f"../{source_name}"]
         subprocess.run(args, check=True, cwd=source_dir)
     else:
-        source_stem = files[0].split("/", 1)[0]
+        source_stem = "null" if nulldir else files[0].split("/", 1)[0]
         source_dir = TMP / "sources" / source_stem
         shutil.rmtree(source_dir, ignore_errors=True)
         args = ["/usr/bin/tar", "-xf", source_name]
         subprocess.run(args, check=True, cwd=TMP / "sources")
-
-    
+    if nulldir:
+        (TMP / "sources" / "null").mkdir()
     build_dir = TMP / "builds" / manifest.fullname()
     shutil.rmtree(build_dir, ignore_errors=True)
-    build_dir.mkdir(755,parents=True)
+    build_dir.mkdir(755, parents=True)
     for patch in path.glob("*.patch"):
         args = ["/usr/bin/patch", "-Np1", "-i", patch]
         subprocess.run(args, check=True, cwd=source_dir)
