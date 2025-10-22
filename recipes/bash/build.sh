@@ -2,4 +2,4 @@
             --without-bash-malloc     \
             --with-installed-readline
 make
-make install-strip
+make DESTDIR=$DESTDIR install
