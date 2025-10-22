@@ -13,7 +13,8 @@ echo "rootsbindir=/usr/sbin" > configparms
              --enable-stack-protector=strong \
              --enable-kernel=5.4
 make
-make install
+make DESTDIR=$DESTDIR install
+make DESTDIR=$DESTDIR localedata/install-locales
 sed '/RTLDLIST=/s@/usr@@g' -i $DESTDIR/usr/bin/ldd
 mkdir -p $DESTDIR/etc
 cat > $DESTDIR/etc/nsswitch.conf << "EOF"
@@ -32,4 +33,11 @@ ethers: files
 rpc: files
 
 # End /etc/nsswitch.conf
+EOF
+mkdir -p $DESTDIR/etc/ld.so.conf
+cat > $DESTDIR/etc/ld.so.conf << "EOF"
+/usr/local/lib
+/opt/lib
+# Add an include directory
+include /etc/ld.so.conf.d/*.conf
 EOF
