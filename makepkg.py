@@ -82,15 +82,24 @@ def build(package: str, interactive: bool) -> None:
         ["/usr/bin/tar", "-tf", source_name], cwd=TMP / "sources"
     )
     files = output.decode().splitlines()
-    files.sort()
-    source_stem = files[0].split("/", 1)[0]
-    source_dir = TMP / "sources" / source_stem
-    shutil.rmtree(source_dir, ignore_errors=True)
-    args = ["/usr/bin/tar", "-xf", source_name]
-    subprocess.run(args, check=True, cwd=TMP / "sources")
+    if '/' not in files[0]:
+        source_stem=source_name.rsplit('.', 1)[0].removesuffix('.tar')
+        source_dir = TMP/'sources'/source_stem
+        shutil.rmtree(source_dir, ignore_errors=True)
+        source_dir.mkdir(755)
+        args = ["/usr/bin/tar", "-xf", f"../{source_name}"]
+        subprocess.run(args, check=True, cwd=source_dir)
+    else:
+        source_stem = files[0].split("/", 1)[0]
+        source_dir = TMP / "sources" / source_stem
+        shutil.rmtree(source_dir, ignore_errors=True)
+        args = ["/usr/bin/tar", "-xf", source_name]
+        subprocess.run(args, check=True, cwd=TMP / "sources")
+
+    
     build_dir = TMP / "builds" / manifest.fullname()
     shutil.rmtree(build_dir, ignore_errors=True)
-    build_dir.mkdir(parents=True)
+    build_dir.mkdir(755,parents=True)
     for patch in path.glob("*.patch"):
         args = ["/usr/bin/patch", "-Np1", "-i", patch]
         subprocess.run(args, check=True, cwd=source_dir)
