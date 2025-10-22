@@ -34,7 +34,7 @@ rpc: files
 
 # End /etc/nsswitch.conf
 EOF
-mkdir -p $DESTDIR/etc/ld.so.d
+mkdir -p $DESTDIR/etc/ld.so.conf.d
 cat > $DESTDIR/etc/ld.so.conf << "EOF"
 /usr/local/lib
 /opt/lib
