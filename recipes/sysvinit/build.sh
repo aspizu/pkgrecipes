@@ -29,3 +29,13 @@ s1:1:respawn:/sbin/sulogin
 
 # End /etc/inittab
 EOF
+
+mkdir -p $DESTDIR/etc/sysconfig
+cat > $DESTDIR/etc/sysconfig/console << "EOF"
+# Begin /etc/sysconfig/console
+
+UNICODE="1"
+FONT="Lat2-Terminus16"
+
+# End /etc/sysconfig/console
+EOF
