@@ -1,5 +1,6 @@
 make
 make DESTDIR=$DESTDIR install
+mkdir $DESTDIR/etc
 cat > $DESTDIR/etc/inittab << "EOF"
 # Begin /etc/inittab
 
