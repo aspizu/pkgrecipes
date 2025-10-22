@@ -5,4 +5,4 @@ sed -i 's/-Wl,-rpath,[^ ]*//' support/shobj-conf
             --disable-static \
             --with-curses
 make SHLIB_LIBS="-lncursesw"
-make install
+make DESTDIR=$DESTDIR install
