@@ -2,6 +2,7 @@
 import argparse
 import os
 import shutil
+import stat
 import subprocess
 from argparse import Namespace
 from dataclasses import dataclass, field
@@ -103,7 +104,7 @@ def build(package: str, interactive: bool) -> None:
         (TMP / "sources" / "null").mkdir()
     build_dir = TMP / "builds" / manifest.fullname()
     shutil.rmtree(build_dir, ignore_errors=True)
-    build_dir.mkdir(755, parents=True)
+    build_dir.mkdir(parents=True, exist_ok=True)
     for patch in path.glob("*.patch"):
         args = ["/usr/bin/patch", "-Np1", "-i", patch]
         subprocess.run(args, check=True, cwd=source_dir)
@@ -116,6 +117,12 @@ def build(package: str, interactive: bool) -> None:
     env["DESTDIR"] = build_dir.as_posix()
     subprocess.run(args, check=True, cwd=source_dir, env=env)
     strip(build_dir.as_posix())
+    if (path / "configure.sh").exists():
+        configure_path = build_dir / f"var/lib/meow/installed/{package}/configure.sh"
+        configure_path.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(path / "configure.sh", configure_path)
+        os.chown(configure_path, 0, 0)
+        os.chmod(configure_path, stat.S_IRWXU)
     build_name = manifest.fullname() + ".mz"
     args = ["meow", "zip", TMP / "builds" / build_name]
     subprocess.run(args, check=True, cwd=build_dir)

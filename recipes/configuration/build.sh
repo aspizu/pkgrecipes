@@ -122,3 +122,12 @@ PRETTY_NAME="meowOS 12.4"
 HOME_URL="https://tilde.club/~aspizu/"
 RELEASE_TYPE="stable"
 EOF
+
+cat > $DESTDIR/etc/resolv.conf << "EOF"
+# Begin /etc/resolv.conf
+
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+
+# End /etc/resolv.conf
+EOF
