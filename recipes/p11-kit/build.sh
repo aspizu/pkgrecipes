@@ -7,13 +7,12 @@ cat >> trust/trust-extract-compat << "EOF"
 # Update trust stores
 /usr/sbin/make-ca -r
 EOF
-mkdir p11-build &&
-cd    p11-build &&
-
-meson setup ..            \
+meson setup              \
       --prefix=/usr       \
       --buildtype=release \
-      -D trust_paths=/etc/pki/anchors &&
-ninja
-mkdir -p /usr/lib
-ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib/libnssckbi.so
+      -D trust_paths=/etc/pki/anchors \
+      _build
+meson compile -C _build
+meson install -C _build --destdir=$DESTDIR
+mkdir -p $DESTDIR/usr/lib
+ln -sfv ./pkcs11/p11-kit-trust.so $DESTDIR/usr/lib/libnssckbi.so
