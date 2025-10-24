@@ -117,18 +117,9 @@ def build(package: str, interactive: bool) -> None:
     subprocess.run(args, check=True, cwd=source_dir, env=env)
     strip(build_dir.as_posix())
     build_name = manifest.fullname() + ".tar.zst"
-    args = [
-        "/usr/bin/tar",
-        "-acf",
-        TMP / "builds" / build_name,
-        ".",
-    ]
+    args = ["meow", "zip", TMP / "builds" / build_name]
     subprocess.run(args, check=True, cwd=build_dir)
-    args = [
-        "/usr/bin/bash",
-        "-c",
-        f'/usr/bin/tar -tf "{build_name}" | cut -c2- | /usr/bin/tree --fromfile .\ndu -h "{build_name}"',
-    ]
+    args = ["meow", "zip", "--list", build_name]
     subprocess.run(args, check=True, cwd=TMP / "builds")
 
 
