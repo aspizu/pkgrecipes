@@ -41,3 +41,10 @@ cat > $DESTDIR/etc/ld.so.conf << "EOF"
 # Add an include directory
 include /etc/ld.so.conf.d/*.conf
 EOF
+case $(uname -m) in
+    i?86)   ln -sfv ld-linux.so.2 $DESTDIR/lib/ld-lsb.so.3
+    ;;
+    x86_64) ln -sfv ../lib/ld-linux-x86-64.so.2 $DESTDIR/lib64
+            ln -sfv ../lib/ld-linux-x86-64.so.2 $DESTDIR/lib64/ld-lsb-x86-64.so.3
+    ;;
+esac
