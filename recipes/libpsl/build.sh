@@ -1,3 +1,3 @@
-./configure --prefix=/usr --disable-static --enable-man --disable-dependency-tracking
+./configure --prefix=/usr --disable-static --disable-dependency-tracking
 make
 make DESTDIR=$DESTDIR install
