@@ -1,0 +1,5 @@
+name = "linux-headers"
+version = "6.16.1"
+release = 1
+dependencies = []
+source = "https://www.kernel.org/pub/linux/kernel/v6.x/linux-6.16.1.tar.xz"
