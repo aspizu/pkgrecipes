@@ -116,7 +116,7 @@ def build(package: str, interactive: bool) -> None:
     env["DESTDIR"] = build_dir.as_posix()
     subprocess.run(args, check=True, cwd=source_dir, env=env)
     strip(build_dir.as_posix())
-    build_name = manifest.fullname() + ".tar.zst"
+    build_name = manifest.fullname() + ".mz"
     args = ["meow", "zip", TMP / "builds" / build_name]
     subprocess.run(args, check=True, cwd=build_dir)
     args = ["meow", "zip", "--list", build_name]
