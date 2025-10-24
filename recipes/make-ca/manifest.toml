@@ -1,0 +1,5 @@
+name = "make-ca"
+version = "1.16.1"
+release = 1
+dependencies = []
+source = "https://github.com/lfs-book/make-ca/archive/v1.16.1/make-ca-1.16.1.tar.gz"
