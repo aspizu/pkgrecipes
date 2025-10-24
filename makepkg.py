@@ -121,6 +121,8 @@ def build(package: str, interactive: bool) -> None:
     subprocess.run(args, check=True, cwd=build_dir)
     args = ["meow", "zip", "--list", build_name]
     subprocess.run(args, check=True, cwd=TMP / "builds")
+    args = ["/usr/bin/minisign", "-Sm", build_name]
+    subprocess.run(args, check=True, cwd=TMP / "builds")
 
 
 def upload(destination: str) -> None:
@@ -131,7 +133,8 @@ def upload(destination: str) -> None:
         "--update",
         "--human-readable",
         "--progress",
-        "--include=*.tar.zst",
+        "--include=*.mz",
+        "--include=*.mz.minisig",
         "--exclude=*",
         f"{TMP}/builds/",
         destination,
