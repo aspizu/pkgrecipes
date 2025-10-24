@@ -1,0 +1,5 @@
+name = "wget"
+version = "1.25.0"
+release = 1
+dependencies = []
+source = "https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz"
