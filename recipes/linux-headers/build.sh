@@ -1,3 +1,4 @@
 make mrproper
 make headers
-make DESTDIR=$DESTDIR headers_install
+find usr/include -type f ! -name '*.h' -delete
+cp -r usr/include $DESTDIR/usr
