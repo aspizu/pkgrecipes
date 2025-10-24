@@ -1,3 +1,3 @@
-./configure --prefix=/usr --buildtype=release
+./configure --prefix=/usr --disable-static --enable-man --disable-dependency-tracking
 make
 make DESTDIR=$DESTDIR install
