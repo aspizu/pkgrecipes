@@ -4,11 +4,11 @@ Date:   Fri Oct 24 14:25:39 2025 +0530
 
     Add meowOS logo
 
-diff --git a/src/logo/ascii/meow.txt b/src/logo/ascii/meow.txt
+diff --git a/src/logo/ascii/meowos.txt b/src/logo/ascii/meowos.txt
 new file mode 100644
 index 0000000..ab1a351
 --- /dev/null
-+++ b/src/logo/ascii/meow.txt
++++ b/src/logo/ascii/meowos.txt
 @@ -0,0 +1,15 @@
 + _                        
 + \`*-.                    
@@ -37,7 +37,7 @@ index 4de3cf0..affa585 100644
 +    // meowOS
 +    {
 +        .names = {"meowOS"},
-+        .lines = FASTFETCH_DATATEXT_LOGO_MEOW,
++        .lines = FASTFETCH_DATATEXT_LOGO_MEOWOS,
 +        .colors = {
 +            FF_COLOR_FG_MAGENTA,
 +            FF_COLOR_FG_YELLOW,
