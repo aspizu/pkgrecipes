@@ -117,7 +117,7 @@ EOF
 cat > $DESTDIR/etc/os-release << "EOF"
 NAME="meowOS"
 VERSION="12.4"
-ID=lfs
+ID=meowOS
 PRETTY_NAME="meowOS 12.4"
 HOME_URL="https://tilde.club/~aspizu/"
 RELEASE_TYPE="stable"
