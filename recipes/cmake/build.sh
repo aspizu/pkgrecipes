@@ -6,6 +6,7 @@ sed -i '/"lib64"/s/64//' Modules/GNUInstallDirs.cmake
             --no-system-jsoncpp  \
             --no-system-cppdap   \
             --no-system-librhash \
-            --no-system-libarchive
+            --no-system-libarchive \
+            --no-system-libuv
 make
 make DESTDIR=$DESTDIR install
