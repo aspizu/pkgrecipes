@@ -1,2 +1,2 @@
 make
-make DESTDIR=$DESTDIR install
+make PREFIX=/usr DESTDIR=$DESTDIR install
