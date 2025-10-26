@@ -1,0 +1,5 @@
+name = "kakoune"
+version = "2025.06.03"
+release = 1
+dependencies = []
+source = "https://github.com/mawww/kakoune/releases/download/v2025.06.03/kakoune-2025.06.03.tar.bz2"
