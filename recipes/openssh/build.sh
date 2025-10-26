@@ -1,3 +1,4 @@
+cd openssh-10.0p1
 ./configure --prefix=/usr                            \
             --sysconfdir=/etc/ssh                    \
             --with-privsep-path=/var/lib/sshd        \
