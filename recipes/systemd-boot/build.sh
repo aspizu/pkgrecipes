@@ -80,6 +80,6 @@ meson setup .. \
 meson compile
 install -Dm755 bootctl $DESTDIR/usr/bin/bootctl
 _efiarch=x64
-mkdir -p $DESTDIR/usr/bin/systemd/boot/efi
+mkdir -p $DESTDIR/usr/lib/systemd/boot/efi
 cp src/boot/{linux${_efiarch}.{efi,elf}.stub,systemd-boot${_efiarch}.efi} $DESTDIR/usr/lib/systemd/boot/efi
 install -Dm755 kernel-install$DESTDIR/usr/bin/kernel-install
