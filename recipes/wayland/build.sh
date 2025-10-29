@@ -3,5 +3,5 @@ meson setup                  \
       --buildtype=release    \
       -D documentation=false \
       build
-meson -C build compile
-meson -C build install --destdir $DESTDIR
+meson compile -C build
+meson install -C build --destdir $DESTDIR
