@@ -4,5 +4,5 @@ meson setup ..            \
       --prefix=/usr       \
       --buildtype=release \
       -D documentation=false
-ninja
-ninja install --destdir=$DESTDIR
+meson compile ..
+meson install .. --destdir $DESTDIR
