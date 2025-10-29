@@ -115,6 +115,7 @@ def build(package: str, interactive: bool) -> None:
         args = ["/usr/bin/bash", "-e", path / "build.sh"]
     env = os.environ.copy()
     env["DESTDIR"] = build_dir.as_posix()
+    env["RECIPE"] = path.as_posix()
     subprocess.run(args, check=True, cwd=source_dir, env=env)
     strip(build_dir.as_posix())
     if (path / "configure.sh").exists():
