@@ -1,0 +1,5 @@
+name = "wayland"
+version = "1.24.0"
+release = 1
+dependencies = []
+source = "https://gitlab.freedesktop.org/wayland/wayland/-/releases/1.24.0/downloads/wayland-1.24.0.tar.xz"
