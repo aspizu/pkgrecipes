@@ -1,5 +1,5 @@
 name = "eiwd"
 version = "2.22"
-release = 1
+release = 2
 dependencies = []
 source = "https://github.com/illiliti/eiwd/releases/download/2.22-1/iwd-2.22.tar.xz"
