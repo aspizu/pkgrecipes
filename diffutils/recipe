@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+NAME=diffutils
+VERSION=3.12
+RELEASE=1
+DEPENDS=glibc
+SOURCE=https://ftp.gnu.org/gnu/diffutils/diffutils-$VERSION.tar.xz
+LICENSE="GPL-3.0-or-later"
+
+build()
+{
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$DESTDIR install
+}

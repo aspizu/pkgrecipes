@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+NAME=e2fsprogs
+VERSION=1.47.3
+RELEASE=1
+DEPENDS=glibc,util-linux
+SOURCE=https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v$VERSION/e2fsprogs-$VERSION.tar.gz
+LICENSE="GPL-2.0-only"
+
+build()
+{
+    mkdir build
+    cd build
+    ../configure --prefix=/usr      \
+                --sysconfdir=/etc   \
+                --enable-elf-shlibs \
+                --disable-libblkid  \
+                --disable-libuuid   \
+                --disable-uuidd     \
+                --disable-fsck
+    make
+    make DESTDIR=$DESTDIR install
+    rm -f $DESTDIR/usr/lib/{libcom_err,libe2p,libext2fs,libss}.a
+}

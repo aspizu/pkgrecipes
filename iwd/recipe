@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+
+NAME=iwd
+VERSION=3.10
+RELEASE=1
+DEPENDS=glibc,gcc,sh
+SOURCE=https://github.com/ioraff/eiwd/releases/download/3.10-1/iwd-3.10.tar.xz
+LICENSE="LGPL-2.1-or-later"
+
+build()
+{
+    ./configure               \
+        --prefix=/usr         \
+        --libexecdir=/usr/bin \
+        --localstatedir=/var  \
+        --disable-dbus
+    make
+    make DESTDIR=$DESTDIR install
+    install -Dm644 $RECIPE/daemon $DESTDIR/etc/init.d/iwd
+}
