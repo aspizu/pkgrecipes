@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+NAME=bison
+VERSION=3.8.2
+RELEASE=1
+DEPENDS=glibc,gettext,m4,sh
+SOURCE=https://ftp.gnu.org/gnu/bison/bison-$VERSION.tar.xz
+
+build()
+{
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$DESTDIR install
+}

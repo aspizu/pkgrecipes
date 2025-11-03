@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+NAME=autoconf
+VERSION=2.72
+RELEASE=1
+DEPENDS=glibc,gawk,m4,diffutils,perl,sh
+SOURCE=https://ftp.gnu.org/gnu/autoconf/autoconf-$VERSION.tar.xz
+
+build()
+{
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$DESTDIR install
+}

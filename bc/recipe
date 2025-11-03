@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+NAME=bc
+VERSION=7.0.3
+RELEASE=1
+DEPENDS=glibc,readline
+SOURCE=https://github.com/gavinhoward/bc/releases/download/7.0.3/bc-$VERSION.tar.xz
+
+build()
+{
+    CC='gcc -std=c99' ./configure --prefix=/usr -G -O3 -r --with-readline
+    make
+    make DESTDIR=$DESTDIR install
+}

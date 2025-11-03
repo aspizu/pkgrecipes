@@ -1,0 +1,26 @@
+#!/usr/bin/bash
+
+NAME=binutils
+VERSION=2.45
+RELEASE=1
+DEPENDS=glibc,zlib,zstd,libelf
+SOURCE=https://sourceware.org/pub/binutils/releases/binutils-$VERSION.tar.xz
+
+build()
+{
+    mkdir build
+    cd build
+    ../configure --prefix=/usr      \
+                --sysconfdir=/etc   \
+                --enable-ld=default \
+                --enable-plugins    \
+                --enable-shared     \
+                --disable-werror    \
+                --enable-64-bit-bfd \
+                --enable-new-dtags  \
+                --with-system-zlib  \
+                --enable-default-hash-style=gnu
+    make tooldir=/usr
+    make DESTDIR=$DESTDIR tooldir=/usr install
+    rm -rf $DESTDIR/usr/lib/lib{bfd,ctf,ctf-nobfd,gprofng,opcodes,sframe}.a $DESTDIR/usr/share/doc/gprofng/
+}

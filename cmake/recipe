@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+
+NAME=cmake
+VERSION=4.1.0
+RELEASE=1
+DEPENDS=glibc,curl,ncurses,zlib,expat,gcc
+SOURCE=https://cmake.org/files/v${VERSION%.*}/cmake-$VERSION.tar.gz
+
+build()
+{
+    sed -i '/"lib64"/s/64//' Modules/GNUInstallDirs.cmake
+
+    ./bootstrap --prefix=/usr          \
+                --system-libs          \
+                --mandir=/share/man    \
+                --no-system-jsoncpp    \
+                --no-system-cppdap     \
+                --no-system-librhash   \
+                --no-system-libarchive \
+                --no-system-libuv
+    make
+    make DESTDIR=$DESTDIR install
+}

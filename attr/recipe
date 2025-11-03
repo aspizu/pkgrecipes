@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+NAME=attr
+VERSION=2.5.2
+RELEASE=1
+DEPENDS=glibc
+SOURCE=https://download.savannah.gnu.org/releases/attr/attr-$VERSION.tar.gz
+LICENSE="LGPL-2.1-or-later AND GPL-2.0-or-later"
+
+build()
+{
+    ./configure --prefix=/usr     \
+                --disable-static  \
+                --sysconfdir=/etc
+    make
+    make DESTDIR=$DESTDIR install
+}
