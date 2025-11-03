@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+
+NAME=gmp
+VERSION=6.3.0
+RELEASE=1
+DEPENDS=glibc,gcc
+SOURCE=https://ftp.gnu.org/gnu/gmp/gmp-$VERSION.tar.xz
+LICENSE="LGPL-3.0-or-later"
+
+build()
+{
+    sed -i '/long long t1;/,+1s/()/(...)/' configure
+    ./configure --prefix=/usr    \
+                --enable-cxx     \
+                --disable-static \
+                --host=none-linux-gnu
+    make
+    make DESTDIR=$DESTDIR install
+}

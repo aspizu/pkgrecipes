@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+NAME=gdbm
+VERSION=1.26
+RELEASE=1
+DEPENDS=glibc,sh
+SOURCE=https://ftp.gnu.org/gnu/gdbm/gdbm-$VERSION.tar.gz
+LICENSE="GPL-3.0-or-later"
+
+build()
+{
+    ./configure --prefix=/usr    \
+                --disable-static \
+                --enable-libgdbm-compat
+    make
+    make DESTDIR=$DESTDIR install
+}

@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+NAME=iana-etc
+VERSION=20251016
+RELEASE=1
+SOURCE=https://github.com/Mic92/iana-etc/releases/download/$VERSION/iana-etc-$VERSION.tar.gz
+
+build()
+{
+    install -D services $DESTDIR/etc/services
+    install -D protocols $DESTDIR/etc/protocols
+}

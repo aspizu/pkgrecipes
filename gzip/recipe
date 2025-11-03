@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+NAME=gzip
+VERSION=1.14
+RELEASE=1
+DEPENDS=glibc,sh,coreutils,sed
+SOURCE=https://ftp.gnu.org/gnu/gzip/gzip-$VERSION.tar.xz
+LICENSE="GPL-3.0-or-later"
+
+build()
+{
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$DESTDIR install
+}

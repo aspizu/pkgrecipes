@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+NAME=gettext
+VERSION=0.26
+RELEASE=1
+DEPENDS=glibc,acl,attr,gcc,ncurses,sh,libxml2
+SOURCE=https://ftp.gnu.org/gnu/gettext/gettext-$VERSION.tar.xz
+LICENSE="GPL-3.0-or-later"
+
+build()
+{
+    ./configure --prefix=/usr --disable-static
+    make
+    make DESTDIR=$DESTDIR install
+    chmod 0755 $DESTDIR/usr/lib/preloadable_libintl.so
+}

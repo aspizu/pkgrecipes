@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+NAME=file
+VERSION=5.46
+RELEASE=1
+DEPENDS=glibc,bzip2,xz,zlib,zstd
+SOURCE=https://astron.com/pub/file/file-$VERSION.tar.gz
+
+build()
+{
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$DESTDIR install
+}

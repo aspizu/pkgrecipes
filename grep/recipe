@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+NAME=grep
+VERSION=3.12
+RELEASE=1
+DEPENDS=glibc,pcre2,sh
+SOURCE=https://ftp.gnu.org/gnu/grep/grep-$VERSION.tar.xz
+LICENSE="GPL-3.0-or-later"
+
+build()
+{
+    sed -i "s/echo/#echo/" src/egrep.sh
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$DESTDIR install
+}
