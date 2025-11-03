@@ -1,5 +1,0 @@
-name = "cmake"
-version = "4.1.0"
-release = 1
-dependencies = []
-source = "https://cmake.org/files/v4.1/cmake-4.1.0.tar.gz"

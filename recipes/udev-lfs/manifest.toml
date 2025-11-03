@@ -1,5 +1,0 @@
-name = "udev-lfs"
-version = "20230818"
-release = 1
-dependencies = []
-source = "https://anduin.linuxfromscratch.org/LFS/udev-lfs-20230818.tar.xz"

@@ -1,5 +1,0 @@
-name = "inetutils"
-version = "2.6"
-release = 1
-dependencies = []
-source = "https://ftp.gnu.org/gnu/inetutils/inetutils-2.6.tar.xz"

@@ -1,5 +1,0 @@
-name = "shadow"
-version = "4.18.0"
-release = 1
-dependencies = []
-source = "https://github.com/shadow-maint/shadow/releases/download/4.18.0/shadow-4.18.0.tar.xz"

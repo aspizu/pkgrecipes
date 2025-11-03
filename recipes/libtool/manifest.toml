@@ -1,5 +1,0 @@
-name = "libtool"
-version = "2.5.4"
-release = 1
-dependencies = []
-source = "https://ftp.gnu.org/gnu/libtool/libtool-2.5.4.tar.xz"

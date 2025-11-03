@@ -1,8 +1,0 @@
-./config --prefix=/usr         \
-         --openssldir=/etc/ssl \
-         --libdir=lib          \
-         shared                \
-         zlib-dynamic
-make
-sed -i '/INSTALL_LIBS/s/libcrypto.a libssl.a//' Makefile
-make DESTDIR=$DESTDIR MANSUFFIX=ssl install

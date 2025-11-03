@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+
+NAME=zstd
+VERSION=1.5.7
+RELEASE=1
+DEPENDS=glibc,gcc,zlib,xz,lz4
+SOURCE=https://github.com/facebook/zstd/archive/refs/tags/v$VERSION.tar.gz
+LICENSE="BSD-3-Clause OR GPL-2.0-only"
+
+build()
+{
+    make prefix=/usr           \
+         HAVE_THREAD=1         \
+         ZSTD_LEGACY_SUPPORT=1 \
+         HAVE_ZLIB=1           \
+         HAVE_LZMA=1           \
+         HAVE_LZ4=1
+    make prefix=/usr install
+    rm $DESTDIR/usr/lib/libzstd.a
+}

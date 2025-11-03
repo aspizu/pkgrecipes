@@ -1,5 +1,0 @@
-name = "openssh"
-version = "10.0p1"
-release = 1
-dependencies = []
-source = "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.0p1.tar.gz"

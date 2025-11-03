@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+NAME=xz
+VERSION=5.8.1
+RELEASE=1
+DEPENDS=glibc,sh
+SOURCE=https://tukaani.org/xz/xz-$VERSION.tar.gz
+
+build()
+{
+    ./configure --prefix=/usr --disable-static
+    make
+    make install
+}

@@ -1,5 +1,0 @@
-name = "openssl"
-version = "3.5.2"
-release = 1
-dependencies = []
-source = "https://github.com/openssl/openssl/releases/download/openssl-3.5.2/openssl-3.5.2.tar.gz"

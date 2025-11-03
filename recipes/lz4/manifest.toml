@@ -1,5 +1,0 @@
-name = "lz4"
-version = "1.10.0"
-release = 1
-dependencies = []
-source = "https://github.com/lz4/lz4/archive/refs/tags/v1.10.0.tar.gz"

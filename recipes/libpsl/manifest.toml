@@ -1,5 +1,0 @@
-name = "libpsl"
-version = "0.21.5"
-release = 1
-dependencies = []
-source = "https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz"

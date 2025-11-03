@@ -1,5 +1,0 @@
-name = "glibc"
-version = "2.42"
-release = 1
-dependencies = []
-source = "https://ftp.gnu.org/gnu/libc/glibc-2.42.tar.gz"

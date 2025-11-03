@@ -1,5 +1,0 @@
-name = "ncurses"
-version = "6.5-20250809"
-release = 1
-dependencies = []
-source = "https://invisible-mirror.net/archives/ncurses/current/ncurses-6.5-20250809.tgz"

@@ -1,5 +1,0 @@
-name = "iproute2"
-version = "6.16.0"
-release = 1
-dependencies = []
-source = "https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-6.16.0.tar.xz"

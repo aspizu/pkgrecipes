@@ -1,5 +1,0 @@
-name = "iana-etc"
-version = "20251016"
-release = 1
-dependencies = []
-source = "https://github.com/Mic92/iana-etc/releases/download/20251016/iana-etc-20251016.tar.gz"

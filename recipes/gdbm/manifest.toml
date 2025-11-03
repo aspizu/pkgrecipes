@@ -1,5 +1,0 @@
-name = "gdbm"
-version = "1.26"
-release = 1
-dependencies = []
-source = "https://ftp.gnu.org/gnu/gdbm/gdbm-1.26.tar.gz"

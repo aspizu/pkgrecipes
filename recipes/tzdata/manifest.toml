@@ -1,5 +1,0 @@
-name = "tzdata"
-version = "2025b"
-release = 1
-dependencies = []
-source = "https://www.iana.org/time-zones/repository/releases/tzdata2025b.tar.gz"

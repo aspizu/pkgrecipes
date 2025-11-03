@@ -1,5 +1,0 @@
-name = "mpfr"
-version = "4.2.2"
-release = 1
-dependencies = []
-source = "https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.2.tar.xz"

@@ -1,5 +1,0 @@
-name = "grep"
-version = "3.12"
-release = 1
-dependencies = []
-source = "https://ftp.gnu.org/gnu/grep/grep-3.12.tar.xz"

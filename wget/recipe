@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+NAME=wget
+VERSION=1.25.0
+RELEASE=1
+DEPENDS=glibc,zlib,openssl,util-linux,libpsl,libidn2,make-ca
+SOURCE=https://ftp.gnu.org/gnu/wget/wget-$VERSION.tar.gz
+
+build()
+{
+    ./configure --prefix=/usr --sysconfdir=/etc --with-ssl=openssl
+    make
+    make DESTDIR=$DESTDIR install
+}

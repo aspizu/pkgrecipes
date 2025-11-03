@@ -1,5 +1,0 @@
-name = "libffi"
-version = "3.5.2"
-release = 1
-dependencies = []
-source = "https://github.com/libffi/libffi/releases/download/v3.5.2/libffi-3.5.2.tar.gz"

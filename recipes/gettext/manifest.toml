@@ -1,5 +1,0 @@
-name = "gettext"
-version = "0.26"
-release = 1
-dependencies = []
-source = "https://ftp.gnu.org/gnu/gettext/gettext-0.26.tar.xz"

@@ -1,5 +1,0 @@
-name = "libtasn1"
-version = "4.20.0"
-release = 1
-dependencies = []
-source = "https://ftp.gnu.org/gnu/libtasn1/libtasn1-4.20.0.tar.gz"

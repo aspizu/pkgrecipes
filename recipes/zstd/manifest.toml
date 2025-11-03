@@ -1,5 +1,0 @@
-name = "zstd"
-version = "1.5.7"
-release = 1
-dependencies = []
-source = "https://github.com/facebook/zstd/archive/refs/tags/v1.5.7.tar.gz"

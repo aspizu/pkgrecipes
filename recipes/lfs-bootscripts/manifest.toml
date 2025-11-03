@@ -1,5 +1,0 @@
-name = "lfs-bootscripts"
-version = "20250827"
-release = 1
-dependencies = []
-source = "https://www.linuxfromscratch.org/lfs/downloads/12.4/lfs-bootscripts-20250827.tar.xz"

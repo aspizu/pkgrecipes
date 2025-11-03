@@ -1,5 +1,0 @@
-name = "udev"
-version = "257.8"
-release = 1
-dependencies = []
-source = "https://github.com/systemd/systemd/archive/v257.8/systemd-257.8.tar.gz"
