@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+if [[ -f /etc/init.d/iwd ]]; then
+    /etc/init.d/iwd stop
+fi
