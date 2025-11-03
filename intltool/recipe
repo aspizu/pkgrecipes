@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+NAME=intltool
+VERSION=0.51.0
+RELEASE=1
+DEPENDS=perl,perl-xml-parser
+SOURCE=https://launchpad.net/intltool/trunk/$VERSION/+download/intltool-$VERSION.tar.gz
+LICENSE="GPL-2.0-only"
+
+build()
+{
+    sed -i 's:\\\${:\\\$\\{:' intltool-update.in
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$DESTDIR install
+}

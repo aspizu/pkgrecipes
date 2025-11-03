@@ -1,0 +1,27 @@
+#!/usr/bin/bash
+
+NAME=inetutils
+VERSION=2.6
+RELEASE=1
+DEPENDS=glibc,libcap,readline,ncurses,libxcrypt
+SOURCE=https://ftp.gnu.org/gnu/inetutils/inetutils-$VERSION.tar.xz
+LICENSE="GPL-3.0-or-later"
+
+build()
+{
+    sed -i 's/def HAVE_TERMCAP_TGETENT/ 1/' telnet/telnet.c
+    ./configure --prefix=/usr        \
+                --bindir=/usr/bin    \
+                --localstatedir=/var \
+                --disable-logger     \
+                --disable-whois      \
+                --disable-rcp        \
+                --disable-rexec      \
+                --disable-rlogin     \
+                --disable-rsh        \
+                --disable-servers
+    make
+    make DESTDIR=$DESTDIR install
+    mkdir -p $DESTDIR/usr/sbin
+    mv $DESTDIR/usr/{,s}bin/ifconfig
+}

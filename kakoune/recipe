@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+NAME=kakoune
+VERSION=2025.06.03
+RELEASE=1
+DEPENDS=glibc
+SOURCE=https://github.com/mawww/kakoune/releases/download/v$VERSION/kakoune-$VERSION.tar.bz2
+LICENSE="Unlicense"
+
+build()
+{
+    make
+    make PREFIX=/usr DESTDIR=$DESTDIR install
+}

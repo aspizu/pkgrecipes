@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+NAME=iproute2
+VERSION=6.16.0
+RELEASE=1
+DEPENDS=glibc,libcap,libelf
+SOURCE=https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-$VERSION.tar.xz
+LICENSE="GPL-2.0-or-later"
+
+build()
+{
+    sed -i /ARPD/d Makefile
+    rm -f man/man8/arpd.8
+    make NETNS_RUN_DIR=/run/netns
+    make DESTDIR=$DESTDIR SBINDIR=/usr/sbin install
+}
