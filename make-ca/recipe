@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+NAME=make-ca
+VERSION=1.16.1
+RELEASE=1
+DEPENDS=openssl,p11-kit,coreutils,sed,gawk
+SOURCE=https://github.com/lfs-book/make-ca/archive/v$VERSION/make-ca-$VERSION.tar.gz
+LICENSE="MIT"
+
+build()
+{
+    make DESTDIR=$DESTDIR install
+    install -vdm755 $DESTDIR/etc/ssl/local
+    mv LICENSE.MIT LICENSE
+}

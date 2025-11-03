@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+
+NAME=libxcrypt
+VERSION=4.4.38
+RELEASE=1
+DEPENDS=glibc
+SOURCE=https://github.com/besser82/libxcrypt/releases/download/v$VERSION/libxcrypt-$VERSION.tar.xz
+LICENSE="LGPL"
+
+build()
+{
+    ./configure --prefix=/usr                \
+                --enable-hashes=strong,glibc \
+                --enable-obsolete-api=no     \
+                --disable-static             \
+                --disable-failure-tokens
+    make
+    make DESTDIR=$DESTDIR install
+}

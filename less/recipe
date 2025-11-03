@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+NAME=less
+VERSION=679
+RELEASE=1
+DEPENDS=glibc,ncurses
+SOURCE=https://www.greenwoodsoftware.com/less/less-$VERSION.tar.gz
+LICENSE="GPL-3.0-or-later OR LicenseRef-Less"
+
+build()
+{
+    ./configure --prefix=/usr --sysconfdir=/etc
+    make
+    make DESTDIR=$DESTDIR install
+}

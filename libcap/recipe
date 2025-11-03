@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+NAME=libcap
+VERSION=2.76
+RELEASE=1
+DEPENDS=glibc
+SOURCE=https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-$VERSION.tar.xz
+LICENSE="BSD-3-Clause OR GPL-2.0-only"
+
+build()
+{
+    sed -i '/install -m.*STA/d' libcap/Makefile
+    make prefix=/usr lib=lib
+    make DESTDIR=$DESTDIR prefix=/usr lib=lib install
+}

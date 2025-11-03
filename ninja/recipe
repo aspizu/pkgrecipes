@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+NAME=ninja
+VERSION=1.13.1
+RELEASE=1
+DEPENDS=glibc,gcc
+SOURCE=https://github.com/ninja-build/ninja/archive/v$VERSION/ninja-$VERSION.tar.gz
+LICENSE="Apache-2.0"
+
+build()
+{
+    python3 configure.py --bootstrap
+    install -Dm755 ninja $DESTDIR/usr/bin/ninja
+    install -Dm644 misc/bash-completion $DESTDIR/usr/share/bash-completion/completions/ninja
+    install -Dm644 misc/zsh-completion  $DESTDIR/usr/share/zsh/site-functions/_ninja
+}

@@ -1,0 +1,30 @@
+#!/usr/bin/bash
+
+NAME=p11-kit
+VERSION=0.25.5
+RELEASE=1
+DEPENDS=glibc,libtasn1,coreutils,libffi
+SOURCE=https://github.com/p11-glue/p11-kit/releases/download/$VERSION/p11-kit-$VERSION.tar.xz
+LICENSE="BSD-3-Clause"
+
+build()
+{
+    sed '20,$ d' -i trust/trust-extract-compat &&
+    
+    cat >> trust/trust-extract-compat << "EOF"
+# Copy existing anchor modifications to /etc/ssl/local
+/usr/libexec/make-ca/copy-trust-modifications
+
+# Update trust stores
+/usr/sbin/make-ca -r
+EOF
+    meson setup               \
+          --prefix=/usr       \
+          --buildtype=release \
+          -D trust_paths=/etc/pki/anchors \
+          _build
+    meson compile -C _build
+    meson install -C _build --destdir=$DESTDIR
+    mkdir -p $DESTDIR/usr/lib
+    ln -sf ./pkcs11/p11-kit-trust.so $DESTDIR/usr/lib/libnssckbi.so
+}

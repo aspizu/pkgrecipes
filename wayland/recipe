@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+
+NAME=wayland
+VERSION=1.24.0
+RELEASE=1
+DEPENDS=glibc,libffi,expat,libxml2
+SOURCE=https://gitlab.freedesktop.org/wayland/wayland/-/releases/$VERSION/downloads/wayland-$VERSION.tar.xz
+LICENSE="MIT"
+
+build()
+{
+    meson setup                  \
+          --prefix=/usr          \
+          --buildtype=release    \
+          -D documentation=false \
+          build
+    meson compile -C build
+    meson install -C build --destdir $DESTDIR
+}

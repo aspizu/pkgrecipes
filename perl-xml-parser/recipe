@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+NAME=perl-xml-parser
+VERSION=2.47
+RELEASE=1
+DEPENDS=expat
+SOURCE=https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-$VERSION.tar.gz
+LICENSE="PerlArtistic"
+
+build()
+{
+    perl Makefile.PL INSTALLDIRS=vendor
+    make
+    make DESTDIR=$DESTDIR install
+}

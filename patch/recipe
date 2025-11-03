@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+NAME=patch
+VERSION=2.8
+RELEASE=1
+DEPENDS=glibc,attr
+SOURCE=https://ftp.gnu.org/gnu/patch/patch-$VERSION.tar.xz
+LICENSE="GPL-3.0-or-later"
+
+build()
+{
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$DESTDIR install
+}

@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+NAME=psmisc
+VERSION=23.7
+RELEASE=1
+DEPENDS=glibc,ncurses
+SOURCE=https://sourceforge.net/projects/psmisc/files/psmisc/psmisc-$VERSION.tar.xz
+LICENSE="GPL"
+
+build()
+{
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$DESTDIR install
+}

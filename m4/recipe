@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+NAME=m4
+VERSION=1.4.20
+RELEASE=1
+DEPENDS=glibc
+SOURCE=https://ftp.gnu.org/gnu/m4/m4-$VERSION.tar.xz
+LICENSE="GPL-3.0-or-later"
+
+build()
+{
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$DESTDIR install
+}

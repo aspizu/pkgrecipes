@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+NAME=libtasn1
+VERSION=4.20.0
+RELEASE=1
+DEPENDS=glibc
+SOURCE=https://ftp.gnu.org/gnu/libtasn1/libtasn1-$VERSION.tar.gz
+LICENSE="GPL-3.0-or-later"
+
+build()
+{
+    ./configure --prefix=/usr --disable-static
+    make
+    make DESTDIR=$DESTDIR install
+}

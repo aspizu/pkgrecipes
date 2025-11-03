@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+NAME=lz4
+VERSION=1.10.0
+RELEASE=1
+DEPENDS=glibc
+SOURCE=https://github.com/lz4/lz4/archive/refs/tags/v$VERSION.tar.gz
+LICENSE="GPL-2.0-or-later"
+
+build()
+{
+    make BUILD_STATIC=no PREFIX=/usr
+    make DESTDIR=$DESTDIR BUILD_STATIC=no PREFIX=/usr install
+}

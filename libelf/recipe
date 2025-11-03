@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+NAME=libelf
+VERSION=0.193
+RELEASE=1
+DEPENDS=zlib,zstd,xz,bzip2,glibc
+SOURCE=https://sourceware.org/ftp/elfutils/$VERSION/elfutils-$VERSION.tar.bz2
+LICENSE="GPL-2.0-or-later OR LGPL-3.0-or-later"
+
+build()
+{
+    ./configure --prefix=/usr --disable-debuginfod --enable-libdebuginfod=dummy
+    make
+    make -C libelf DESTDIR=$DESTDIR install
+    install -Dm644 config/libelf.pc $DESTDIR/usr/lib/pkgconfig/libelf.pc
+    rm $DESTDIR/usr/lib/libelf.a
+}

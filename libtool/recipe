@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+NAME=libtool
+VERSION=2.5.4
+RELEASE=1
+DEPENDS=glibc,sh,tar
+SOURCE=https://ftp.gnu.org/gnu/libtool/libtool-$VERSION.tar.xz
+LICENSE="LGPL-2.0-or-later WITH Libtool-exception"
+
+build()
+{
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$DESTDIR install
+    rm -f $DESTDIR/usr/lib/libltdl.a
+}

@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+
+NAME=python
+VERSION=3.13.7
+RELEASE=1
+DEPENDS=bzip2,expat,gdbm,libffi,libxcrypt,openssl,zlib,tzdata
+SOURCE=https://www.python.org/ftp/python/$VERSION/Python-$VERSION.tar.xz
+LICENSE="PSF-2.0"
+
+build()
+{
+    ./configure --prefix=/usr           \
+                --enable-shared         \
+                --with-system-expat     \
+                --enable-optimizations  \
+                --with-lto              \
+                --without-static-libpython
+    make
+    make DESTDIR=$DESTDIR install
+    mkdir $DESTDIR/etc
+    cat > $DESTDIR/etc/pip.conf << EOF
+[global]
+root-user-action = ignore
+disable-pip-version-check = true
+EOF
+    ln -s python3 $DESTDIR/usr/bin/python
+    ln -s pip3 $DESTDIR/usr/bin/pip
+    ln -s idle3 $DESTDIR/usr/bin/idle
+}

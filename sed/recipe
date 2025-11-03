@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+NAME=sed
+VERSION=4.9
+RELEASE=1
+DEPENDS=glibc,acl
+SOURCE=https://ftp.gnu.org/gnu/sed/sed-$VERSION.tar.xz
+LICENSE="GPL-3.0-or-later"
+
+build()
+{
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$DESTDIR install
+}

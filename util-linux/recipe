@@ -1,0 +1,31 @@
+#!/usr/bin/bash
+
+NAME=util-linux
+VERSION=2.41.1
+RELEASE=1
+DEPENDS=glibc,coreutils,file,libcap,ncurses,libxcrypt,readline,shadow,zlib
+SOURCE=https://www.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-$VERSION.tar.xz
+LICENSE="GPL-3.0-or-later"
+
+build()
+{
+    ./configure --bindir=/usr/bin     \
+                --libdir=/usr/lib     \
+                --runstatedir=/run    \
+                --sbindir=/usr/sbin   \
+                --disable-chfn-chsh   \
+                --disable-login       \
+                --disable-nologin     \
+                --disable-su          \
+                --disable-setpriv     \
+                --disable-runuser     \
+                --disable-pylibmount  \
+                --disable-liblastlog2 \
+                --disable-static      \
+                --without-python      \
+                --without-systemd     \
+                --without-systemdsystemunitdir        \
+                ADJTIME_PATH=/var/lib/hwclock/adjtime
+    make
+    make DESTDIR=$DESTDIR install
+}

@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+NAME=lfs-bootscripts
+VERSION=20250827
+RELEASE=1
+DEPENDS=sysvinit,sh
+SOURCE=https://www.linuxfromscratch.org/lfs/downloads/12.4/lfs-bootscripts-$VERSION.tar.xz
+LICENSE="MIT"
+
+build()
+{
+    make DESTDIR=$DESTDIR install
+}

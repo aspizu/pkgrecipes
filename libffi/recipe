@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+NAME=libffi
+VERSION=3.5.2
+RELEASE=1
+DEPENDS=glibc
+SOURCE=https://github.com/libffi/libffi/releases/download/v$VERSION/libffi-$VERSION.tar.gz
+LICENSE="MIT"
+
+build()
+{
+    ./configure --prefix=/usr --disable-static --without-gcc-arch
+    make
+    make DESTDIR=$DESTDIR install
+}

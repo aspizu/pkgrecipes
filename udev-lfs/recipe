@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+NAME=udev-lfs
+VERSION=20230818
+RELEASE=1
+DEPENDS=sh
+SOURCE=https://anduin.linuxfromscratch.org/LFS/udev-lfs-$VERSION.tar.xz
+LICENSE="MIT"
+
+build()
+{
+    cd ..
+    make DESTDIR=$DESTDIR -f udev-lfs-20230818/Makefile.lfs install
+}

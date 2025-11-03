@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+NAME=tar
+VERSION=1.35
+RELEASE=1
+DEPENDS=glibc,acl
+SOURCE=https://ftp.gnu.org/gnu/tar/tar-$VERSION.tar.xz
+LICENSE="GPL-3.0-or-later"
+
+build()
+{
+    FORCE_UNSAFE_CONFIGURE=1 ./configure --prefix=/usr
+    make
+    make DESTDIR=$DESTDIR install
+}
