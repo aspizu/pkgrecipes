@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+NAME=curl
+VERSION=8.15.0
+RELEASE=1
+DEPENDS=glibc,openssl,make-ca,libidn2,libpsl,zlib,zstd
+SOURCE=https://curl.se/download/curl-$VERSION.tar.xz
+LICENSE="curl"
+
+build()
+{
+    ./configure --prefix=/usr    \
+                --disable-static \
+                --with-openssl   \
+                --with-ca-path=/etc/ssl/certs
+    make
+    make DESTDIR=$DESTDIR install
+}

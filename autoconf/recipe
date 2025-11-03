@@ -5,6 +5,7 @@ VERSION=2.72
 RELEASE=1
 DEPENDS=glibc,gawk,m4,diffutils,perl,sh
 SOURCE=https://ftp.gnu.org/gnu/autoconf/autoconf-$VERSION.tar.xz
+LICENSE="GPL2.0-or-later OR GPL3.0-or-later"
 
 build()
 {

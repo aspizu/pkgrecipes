@@ -5,6 +5,7 @@ VERSION=5.3
 RELEASE=1
 DEPENDS=glibc,readline,ncurses
 SOURCE=https://ftp.gnu.org/gnu/bash/bash-$VERSION.tar.gz
+LICENSE="GPL-3.0-or-later"
 
 build()
 {

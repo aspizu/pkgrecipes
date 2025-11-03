@@ -5,6 +5,7 @@ VERSION=1.25.0
 RELEASE=1
 DEPENDS=glibc,zlib,openssl,util-linux,libpsl,libidn2,make-ca
 SOURCE=https://ftp.gnu.org/gnu/wget/wget-$VERSION.tar.gz
+LICENSE="GPL-3.0-or-later"
 
 build()
 {

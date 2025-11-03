@@ -5,6 +5,7 @@ VERSION=4.1.0
 RELEASE=1
 DEPENDS=glibc,curl,ncurses,zlib,expat,gcc
 SOURCE=https://cmake.org/files/v${VERSION%.*}/cmake-$VERSION.tar.gz
+LICENSE="BSD-3-Clause"
 
 build()
 {

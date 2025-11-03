@@ -5,6 +5,7 @@ VERSION=7.0.3
 RELEASE=1
 DEPENDS=glibc,readline
 SOURCE=https://github.com/gavinhoward/bc/releases/download/7.0.3/bc-$VERSION.tar.xz
+LICENSE="BSD-2-Clause"
 
 build()
 {

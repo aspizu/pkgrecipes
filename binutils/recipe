@@ -5,6 +5,7 @@ VERSION=2.45
 RELEASE=1
 DEPENDS=glibc,zlib,zstd,libelf
 SOURCE=https://sourceware.org/pub/binutils/releases/binutils-$VERSION.tar.xz
+LICENSE="GPL-2.0-or-later OR GPL-3.0-or-later"
 
 build()
 {

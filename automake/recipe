@@ -5,6 +5,7 @@ VERSION=1.18.1
 RELEASE=1
 DEPENDS=glibc,perl,bash
 SOURCE=https://ftp.gnu.org/gnu/automake/automake-$VERSION.tar.xz
+LICENSE="GPL-3.0-or-later"
 
 build()
 {

@@ -5,6 +5,7 @@ VERSION=5.8.1
 RELEASE=1
 DEPENDS=glibc,sh
 SOURCE=https://tukaani.org/xz/xz-$VERSION.tar.gz
+LICENSE="LGPL-2.1-or-later OR GPL-2.0-or-later"
 
 build()
 {
