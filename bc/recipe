@@ -4,12 +4,12 @@ name=bc
 version=7.0.3
 release=1
 depends=glibc,readline
-source=https://github.com/gavinhoward/bc/releases/download/7.0.3/bc-$version.tar.xz
+source=https://github.com/gavinhoward/bc/releases/download/$version/bc-$version.tar.xz
 license="BSD-2-Clause"
 
 build()
 {
-    CC='gcc -std=c99' ./configure --prefix=/usr -G -O3 -r --with-readline
+    CC='gcc -std=c99' ./configure --prefix=/usr -O3 --with-readline
     make
     make DESTDIR=$DESTDIR install
 }
