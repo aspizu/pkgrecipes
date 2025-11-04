@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=bash
-VERSION=5.3
-RELEASE=1
-DEPENDS=glibc,readline,ncurses
-SOURCE=https://ftp.gnu.org/gnu/bash/bash-$VERSION.tar.gz
-LICENSE="GPL-3.0-or-later"
+name=bash
+version=5.3
+release=1
+depends=glibc,readline,ncurses
+source=https://ftp.gnu.org/gnu/bash/bash-$version.tar.gz
+license="GPL-3.0-or-later"
 
 build()
 {

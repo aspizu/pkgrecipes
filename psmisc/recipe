@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=psmisc
-VERSION=23.7
-RELEASE=1
-DEPENDS=glibc,ncurses
-SOURCE=https://sourceforge.net/projects/psmisc/files/psmisc/psmisc-$VERSION.tar.xz
-LICENSE="GPL"
+name=psmisc
+version=23.7
+release=1
+depends=glibc,ncurses
+source=https://sourceforge.net/projects/psmisc/files/psmisc/psmisc-$version.tar.xz
+license="GPL"
 
 build()
 {

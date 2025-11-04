@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=texinfo
-VERSION=7.2
-RELEASE=1
-DEPENDS=glibc,ncurses,gzip,perl,sh
-SOURCE=https://ftp.gnu.org/gnu/texinfo/texinfo-$VERSION.tar.xz
-LICENSE="GPL3"
+name=texinfo
+version=7.2
+release=1
+depends=glibc,ncurses,gzip,perl,sh
+source=https://ftp.gnu.org/gnu/texinfo/texinfo-$version.tar.xz
+license="GPL3"
 
 build()
 {

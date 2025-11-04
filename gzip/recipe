@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=gzip
-VERSION=1.14
-RELEASE=1
-DEPENDS=glibc,sh,coreutils,sed
-SOURCE=https://ftp.gnu.org/gnu/gzip/gzip-$VERSION.tar.xz
-LICENSE="GPL-3.0-or-later"
+name=gzip
+version=1.14
+release=1
+depends=glibc,sh,coreutils,sed
+source=https://ftp.gnu.org/gnu/gzip/gzip-$version.tar.xz
+license="GPL-3.0-or-later"
 
 build()
 {

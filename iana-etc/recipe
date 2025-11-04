@@ -1,9 +1,9 @@
 #!/usr/bin/bash
 
-NAME=iana-etc
-VERSION=20251016
-RELEASE=1
-SOURCE=https://github.com/Mic92/iana-etc/releases/download/$VERSION/iana-etc-$VERSION.tar.gz
+name=iana-etc
+version=20251016
+release=1
+source=https://github.com/Mic92/iana-etc/releases/download/$version/iana-etc-$version.tar.gz
 
 build()
 {

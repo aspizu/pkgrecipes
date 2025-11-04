@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=libpipeline
-VERSION=1.5.8
-RELEASE=1
-DEPENDS=glibc
-SOURCE=https://download.savannah.gnu.org/releases/libpipeline/libpipeline-$VERSION.tar.gz
-LICENSE="GPL-3.0-or-later"
+name=libpipeline
+version=1.5.8
+release=1
+depends=glibc
+source=https://download.savannah.gnu.org/releases/libpipeline/libpipeline-$version.tar.gz
+license="GPL-3.0-or-later"
 
 build()
 {

@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=gdbm
-VERSION=1.26
-RELEASE=1
-DEPENDS=glibc,sh
-SOURCE=https://ftp.gnu.org/gnu/gdbm/gdbm-$VERSION.tar.gz
-LICENSE="GPL-3.0-or-later"
+name=gdbm
+version=1.26
+release=1
+depends=glibc,sh
+source=https://ftp.gnu.org/gnu/gdbm/gdbm-$version.tar.gz
+license="GPL-3.0-or-later"
 
 build()
 {

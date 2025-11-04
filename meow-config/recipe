@@ -1,8 +1,8 @@
 #!/usr/bin/bash
 
-NAME=meow-config
-VERSION=1.0.0
-RELEASE=1
+name=meow-config
+version=1.0.0
+release=1
 
 build()
 {
@@ -123,8 +123,8 @@ DISTRIB_DESCRIPTION="meowOS"
 EOF
 
 cat > $DESTDIR/etc/os-release << "EOF"
-NAME="meowOS"
-VERSION="12.4"
+name="meowOS"
+version="12.4"
 ID=meowOS
 PRETTY_NAME="meowOS 12.4"
 HOME_URL="https://tilde.club/~aspizu/"

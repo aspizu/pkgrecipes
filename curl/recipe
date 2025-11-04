@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=curl
-VERSION=8.15.0
-RELEASE=1
-DEPENDS=glibc,openssl,make-ca,libidn2,libpsl,zlib,zstd
-SOURCE=https://curl.se/download/curl-$VERSION.tar.xz
-LICENSE="curl"
+name=curl
+version=8.15.0
+release=1
+depends=glibc,openssl,make-ca,libidn2,libpsl,zlib,zstd
+source=https://curl.se/download/curl-$version.tar.xz
+license="curl"
 
 build()
 {

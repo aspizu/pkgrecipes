@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=shadow
-VERSION=4.18.0
-RELEASE=1
-DEPENDS=glibc
-SOURCE=https://github.com/shadow-maint/shadow/releases/download/$VERSION/shadow-$VERSION.tar.xz
-LICENSE="BSD-3-Clause"
+name=shadow
+version=4.18.0
+release=1
+depends=glibc
+source=https://github.com/shadow-maint/shadow/releases/download/$version/shadow-$version.tar.xz
+license="BSD-3-Clause"
 
 build()
 {

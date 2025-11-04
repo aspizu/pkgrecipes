@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=libffi
-VERSION=3.5.2
-RELEASE=1
-DEPENDS=glibc
-SOURCE=https://github.com/libffi/libffi/releases/download/v$VERSION/libffi-$VERSION.tar.gz
-LICENSE="MIT"
+name=libffi
+version=3.5.2
+release=1
+depends=glibc
+source=https://github.com/libffi/libffi/releases/download/v$version/libffi-$version.tar.gz
+license="MIT"
 
 build()
 {

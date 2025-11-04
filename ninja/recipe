@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=ninja
-VERSION=1.13.1
-RELEASE=1
-DEPENDS=glibc,gcc
-SOURCE=https://github.com/ninja-build/ninja/archive/v$VERSION/ninja-$VERSION.tar.gz
-LICENSE="Apache-2.0"
+name=ninja
+version=1.13.1
+release=1
+depends=glibc,gcc
+source=https://github.com/ninja-build/ninja/archive/v$version/ninja-$version.tar.gz
+license="Apache-2.0"
 
 build()
 {

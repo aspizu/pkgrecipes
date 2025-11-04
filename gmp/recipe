@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=gmp
-VERSION=6.3.0
-RELEASE=1
-DEPENDS=glibc,gcc
-SOURCE=https://ftp.gnu.org/gnu/gmp/gmp-$VERSION.tar.xz
-LICENSE="LGPL-3.0-or-later"
+name=gmp
+version=6.3.0
+release=1
+depends=glibc,gcc
+source=https://ftp.gnu.org/gnu/gmp/gmp-$version.tar.xz
+license="LGPL-3.0-or-later"
 
 build()
 {

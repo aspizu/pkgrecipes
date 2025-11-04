@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=perl
-VERSION=5.42.0
-RELEASE=1
-DEPENDS=glibc,gdbm,libxcrypt
-SOURCE=https://www.cpan.org/src/5.0/perl-$VERSION.tar.xz
-LICENSE="Artistic-1.0-Perl OR GPL-1.0-or-later"
+name=perl
+version=5.42.0
+release=1
+depends=glibc,gdbm,libxcrypt
+source=https://www.cpan.org/src/5.0/perl-$version.tar.xz
+license="Artistic-1.0-Perl OR GPL-1.0-or-later"
 
 build()
 {

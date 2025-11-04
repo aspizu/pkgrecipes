@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=inetutils
-VERSION=2.6
-RELEASE=1
-DEPENDS=glibc,libcap,readline,ncurses,libxcrypt
-SOURCE=https://ftp.gnu.org/gnu/inetutils/inetutils-$VERSION.tar.xz
-LICENSE="GPL-3.0-or-later"
+name=inetutils
+version=2.6
+release=1
+depends=glibc,libcap,readline,ncurses,libxcrypt
+source=https://ftp.gnu.org/gnu/inetutils/inetutils-$version.tar.xz
+license="GPL-3.0-or-later"
 
 build()
 {

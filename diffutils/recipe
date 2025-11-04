@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=diffutils
-VERSION=3.12
-RELEASE=1
-DEPENDS=glibc
-SOURCE=https://ftp.gnu.org/gnu/diffutils/diffutils-$VERSION.tar.xz
-LICENSE="GPL-3.0-or-later"
+name=diffutils
+version=3.12
+release=1
+depends=glibc
+source=https://ftp.gnu.org/gnu/diffutils/diffutils-$version.tar.xz
+license="GPL-3.0-or-later"
 
 build()
 {

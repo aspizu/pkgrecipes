@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=git
-VERSION=2.50.1
-RELEASE=1
-DEPENDS=glibc,curl,expat,perl,openssl,grep,shadow,zlib
-SOURCE=https://www.kernel.org/pub/software/scm/git/git-$VERSION.tar.xz
-LICENSE="GPL-2.0-only"
+name=git
+version=2.50.1
+release=1
+depends=glibc,curl,expat,perl,openssl,grep,shadow,zlib
+source=https://www.kernel.org/pub/software/scm/git/git-$version.tar.xz
+license="GPL-2.0-only"
 
 build()
 {

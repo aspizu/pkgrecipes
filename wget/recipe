@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=wget
-VERSION=1.25.0
-RELEASE=1
-DEPENDS=glibc,zlib,openssl,util-linux,libpsl,libidn2,make-ca
-SOURCE=https://ftp.gnu.org/gnu/wget/wget-$VERSION.tar.gz
-LICENSE="GPL-3.0-or-later"
+name=wget
+version=1.25.0
+release=1
+depends=glibc,zlib,openssl,util-linux,libpsl,libidn2,make-ca
+source=https://ftp.gnu.org/gnu/wget/wget-$version.tar.gz
+license="GPL-3.0-or-later"
 
 build()
 {

@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=mpfr
-VERSION=4.2.2
-RELEASE=1
-DEPENDS=glibc,gmp
-SOURCE=https://ftp.gnu.org/gnu/mpfr/mpfr-$VERSION.tar.xz
-LICENSE="GPL-3.0-or-later"
+name=mpfr
+version=4.2.2
+release=1
+depends=glibc,gmp
+source=https://ftp.gnu.org/gnu/mpfr/mpfr-$version.tar.xz
+license="GPL-3.0-or-later"
 
 build()
 {

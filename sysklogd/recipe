@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=sysklogd
-VERSION=2.7.2
-RELEASE=1
-DEPENDS=glibc,util-linux
-SOURCE=https://github.com/troglobit/sysklogd/releases/download/v$VERSION/sysklogd-$VERSION.tar.gz
-LICENSE=""
+name=sysklogd
+version=2.7.2
+release=1
+depends=glibc,util-linux
+source=https://github.com/troglobit/sysklogd/releases/download/v$version/sysklogd-$version.tar.gz
+license=""
 
 build()
 {

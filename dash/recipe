@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=dash
-VERSION=0.5.13
-RELEASE=1
-DEPENDS=glibc
-SOURCE=http://gondor.apana.org.au/~herbert/dash/files/dash-$VERSION.tar.gz
-LICENSE=""
+name=dash
+version=0.5.13
+release=1
+depends=glibc
+source=http://gondor.apana.org.au/~herbert/dash/files/dash-$version.tar.gz
+license=""
 
 build()
 {

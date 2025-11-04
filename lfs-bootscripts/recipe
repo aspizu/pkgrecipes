@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=lfs-bootscripts
-VERSION=20250827
-RELEASE=1
-DEPENDS=sysvinit,sh
-SOURCE=https://www.linuxfromscratch.org/lfs/downloads/12.4/lfs-bootscripts-$VERSION.tar.xz
-LICENSE="MIT"
+name=lfs-bootscripts
+version=20250827
+release=1
+depends=sysvinit,sh
+source=https://www.linuxfromscratch.org/lfs/downloads/12.4/lfs-bootscripts-$version.tar.xz
+license="MIT"
 
 build()
 {

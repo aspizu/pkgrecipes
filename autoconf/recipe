@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=autoconf
-VERSION=2.72
-RELEASE=1
-DEPENDS=glibc,gawk,m4,diffutils,perl,sh
-SOURCE=https://ftp.gnu.org/gnu/autoconf/autoconf-$VERSION.tar.xz
-LICENSE="GPL2.0-or-later OR GPL3.0-or-later"
+name=autoconf
+version=2.72
+release=1
+depends=glibc,gawk,m4,diffutils,perl,sh
+source=https://ftp.gnu.org/gnu/autoconf/autoconf-$version.tar.xz
+license="GPL2.0-or-later OR GPL3.0-or-later"
 
 build()
 {

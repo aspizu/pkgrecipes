@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=openssh
-VERSION=10.0p1
-RELEASE=1
-DEPENDS=glibc,sh
-SOURCE=https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-$VERSION.tar.gz
-LICENSE="MIT"
+name=openssh
+version=10.0p1
+release=1
+depends=glibc,sh
+source=https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-$version.tar.gz
+license="MIT"
 
 build()
 {

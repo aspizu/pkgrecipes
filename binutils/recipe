@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=binutils
-VERSION=2.45
-RELEASE=1
-DEPENDS=glibc,zlib,zstd,libelf
-SOURCE=https://sourceware.org/pub/binutils/releases/binutils-$VERSION.tar.xz
-LICENSE="GPL-2.0-or-later OR GPL-3.0-or-later"
+name=binutils
+version=2.45
+release=1
+depends=glibc,zlib,zstd,libelf
+source=https://sourceware.org/pub/binutils/releases/binutils-$version.tar.xz
+license="GPL-2.0-or-later OR GPL-3.0-or-later"
 
 build()
 {

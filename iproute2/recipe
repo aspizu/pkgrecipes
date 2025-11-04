@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=iproute2
-VERSION=6.16.0
-RELEASE=1
-DEPENDS=glibc,libcap,libelf
-SOURCE=https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-$VERSION.tar.xz
-LICENSE="GPL-2.0-or-later"
+name=iproute2
+version=6.16.0
+release=1
+depends=glibc,libcap,libelf
+source=https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-$version.tar.xz
+license="GPL-2.0-or-later"
 
 build()
 {

@@ -1,10 +1,10 @@
 #!/usr/bin/bash
 
-NAME=flex
-VERSION=2.6.4
-RELEASE=1
-DEPENDS=glibc,m4,sh
-SOURCE=https://github.com/westes/flex/releases/download/v$VERSION/flex-$VERSION.tar.gz
+name=flex
+version=2.6.4
+release=1
+depends=glibc,m4,sh
+source=https://github.com/westes/flex/releases/download/v$version/flex-$version.tar.gz
 
 build()
 {

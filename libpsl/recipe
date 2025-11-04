@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=libpsl
-VERSION=0.21.5
-RELEASE=1
-DEPENDS=glibc
-SOURCE=https://github.com/rockdaboot/libpsl/releases/download/$VERSION/libpsl-$VERSION.tar.gz
-LICENSE="MIT"
+name=libpsl
+version=0.21.5
+release=1
+depends=glibc
+source=https://github.com/rockdaboot/libpsl/releases/download/$version/libpsl-$version.tar.gz
+license="MIT"
 
 build()
 {

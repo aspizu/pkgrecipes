@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=tar
-VERSION=1.35
-RELEASE=1
-DEPENDS=glibc,acl
-SOURCE=https://ftp.gnu.org/gnu/tar/tar-$VERSION.tar.xz
-LICENSE="GPL-3.0-or-later"
+name=tar
+version=1.35
+release=1
+depends=glibc,acl
+source=https://ftp.gnu.org/gnu/tar/tar-$version.tar.xz
+license="GPL-3.0-or-later"
 
 build()
 {

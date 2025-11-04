@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=glibc
-VERSION=2.42
-RELEASE=1
-DEPENDS=linux-headers
-SOURCE=https://ftp.gnu.org/gnu/libc/glibc-$VERSION.tar.gz
-LICENSE="LGPL-2.1-or-later"
+name=glibc
+version=2.42
+release=1
+depends=linux-headers
+source=https://ftp.gnu.org/gnu/libc/glibc-$version.tar.gz
+license="LGPL-2.1-or-later"
 
 build()
 {

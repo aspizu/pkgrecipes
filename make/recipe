@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=make
-VERSION=4.4.1
-RELEASE=1
-DEPENDS=glibc
-SOURCE=https://ftp.gnu.org/gnu/make/make-$VERSION.tar.gz
-LICENSE="GPL3"
+name=make
+version=4.4.1
+release=1
+depends=glibc
+source=https://ftp.gnu.org/gnu/make/make-$version.tar.gz
+license="GPL3"
 
 build()
 {

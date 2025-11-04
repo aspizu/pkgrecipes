@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=libxcrypt
-VERSION=4.4.38
-RELEASE=1
-DEPENDS=glibc
-SOURCE=https://github.com/besser82/libxcrypt/releases/download/v$VERSION/libxcrypt-$VERSION.tar.xz
-LICENSE="LGPL"
+name=libxcrypt
+version=4.4.38
+release=1
+depends=glibc
+source=https://github.com/besser82/libxcrypt/releases/download/v$version/libxcrypt-$version.tar.xz
+license="LGPL"
 
 build()
 {

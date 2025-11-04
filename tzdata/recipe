@@ -1,10 +1,10 @@
 #!/usr/bin/bash
 
-NAME=tzdata
-VERSION=2025b
-RELEASE=1
-SOURCE=https://www.iana.org/time-zones/repository/releases/tzdata$VERSION.tar.gz
-LICENSE="LicenseRef-tz"
+name=tzdata
+version=2025b
+release=1
+source=https://www.iana.org/time-zones/repository/releases/tzdata$version.tar.gz
+license="LicenseRef-tz"
 
 build()
 {

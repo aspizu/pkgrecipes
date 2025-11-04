@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=findutils
-VERSION=4.10.0
-RELEASE=1
-DEPENDS=glibc
-SOURCE=https://ftp.gnu.org/gnu/findutils/findutils-$VERSION.tar.xz
-LICENSE="GPL-3.0-or-later"
+name=findutils
+version=4.10.0
+release=1
+depends=glibc
+source=https://ftp.gnu.org/gnu/findutils/findutils-$version.tar.xz
+license="GPL-3.0-or-later"
 
 build()
 {

@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=util-linux
-VERSION=2.41.1
-RELEASE=1
-DEPENDS=glibc,coreutils,file,libcap,ncurses,libxcrypt,readline,shadow,zlib
-SOURCE=https://www.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-$VERSION.tar.xz
-LICENSE="GPL-3.0-or-later"
+name=util-linux
+version=2.41.1
+release=1
+depends=glibc,coreutils,file,libcap,ncurses,libxcrypt,readline,shadow,zlib
+source=https://www.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-$version.tar.xz
+license="GPL-3.0-or-later"
 
 build()
 {

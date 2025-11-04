@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=gettext
-VERSION=0.26
-RELEASE=1
-DEPENDS=glibc,acl,attr,gcc,ncurses,sh,libxml2
-SOURCE=https://ftp.gnu.org/gnu/gettext/gettext-$VERSION.tar.xz
-LICENSE="GPL-3.0-or-later"
+name=gettext
+version=0.26
+release=1
+depends=glibc,acl,attr,gcc,ncurses,sh,libxml2
+source=https://ftp.gnu.org/gnu/gettext/gettext-$version.tar.xz
+license="GPL-3.0-or-later"
 
 build()
 {

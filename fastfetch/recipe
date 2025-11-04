@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=fastfetch
-VERSION=2.51.1
-RELEASE=1
-DEPENDS=glibc
-SOURCE=https://github.com/fastfetch-cli/fastfetch/archive/$VERSION/fastfetch-$VERSION.tar.gz
-LICENSE="MIT"
+name=fastfetch
+version=2.51.1
+release=1
+depends=glibc
+source=https://github.com/fastfetch-cli/fastfetch/archive/$version/fastfetch-$version.tar.gz
+license="MIT"
 
 build()
 {

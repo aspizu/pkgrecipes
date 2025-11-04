@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=ncurses
-VERSION=6.5-20250809
-RELEASE=1
-DEPENDS=glibc,gcc
-SOURCE=https://invisible-mirror.net/archives/ncurses/current/ncurses-$VERSION.tgz
-LICENSE="MIT-open-group"
+name=ncurses
+version=6.5-20250809
+release=1
+depends=glibc,gcc
+source=https://invisible-mirror.net/archives/ncurses/current/ncurses-$version.tgz
+license="MIT-open-group"
 
 build()
 {

@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=openssl
-VERSION=3.5.2
-RELEASE=1
-DEPENDS=glibc,zlib,zstd
-SOURCE=https://github.com/openssl/openssl/releases/download/openssl-$VERSION/openssl-$VERSION.tar.gz
-LICENSE="Apache-2.0"
+name=openssl
+version=3.5.2
+release=1
+depends=glibc,zlib,zstd
+source=https://github.com/openssl/openssl/releases/download/openssl-$version/openssl-$version.tar.gz
+license="Apache-2.0"
 
 build()
 {

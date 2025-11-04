@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=gperf
-VERSION=3.3
-RELEASE=1
-DEPENDS=glibc,gcc
-SOURCE=https://ftp.gnu.org/gnu/gperf/gperf-$VERSION.tar.gz
-LICENSE="GPL-3.0-or-later"
+name=gperf
+version=3.3
+release=1
+depends=glibc,gcc
+source=https://ftp.gnu.org/gnu/gperf/gperf-$version.tar.gz
+license="GPL-3.0-or-later"
 
 build()
 {

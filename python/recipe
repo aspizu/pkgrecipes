@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=python
-VERSION=3.13.7
-RELEASE=1
-DEPENDS=bzip2,expat,gdbm,libffi,libxcrypt,openssl,zlib,tzdata
-SOURCE=https://www.python.org/ftp/python/$VERSION/Python-$VERSION.tar.xz
-LICENSE="PSF-2.0"
+name=python
+version=3.13.7
+release=1
+depends=bzip2,expat,gdbm,libffi,libxcrypt,openssl,zlib,tzdata
+source=https://www.python.org/ftp/python/$version/Python-$version.tar.xz
+license="PSF-2.0"
 
 build()
 {

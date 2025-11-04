@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=udev-lfs
-VERSION=20230818
-RELEASE=1
-DEPENDS=sh
-SOURCE=https://anduin.linuxfromscratch.org/LFS/udev-lfs-$VERSION.tar.xz
-LICENSE="MIT"
+name=udev-lfs
+version=20230818
+release=1
+depends=sh
+source=https://anduin.linuxfromscratch.org/LFS/udev-lfs-$version.tar.xz
+license="MIT"
 
 build()
 {

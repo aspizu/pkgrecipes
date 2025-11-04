@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=sysvinit
-VERSION=3.14
-RELEASE=1
-DEPENDS=glibc,sh
-SOURCE=https://github.com/slicer69/sysvinit/releases/download/$VERSION/sysvinit-$VERSION.tar.xz
-LICENSE="GPL-2.0-only"
+name=sysvinit
+version=3.14
+release=1
+depends=glibc,sh
+source=https://github.com/slicer69/sysvinit/releases/download/$version/sysvinit-$version.tar.xz
+license="GPL-2.0-only"
 
 build()
 {

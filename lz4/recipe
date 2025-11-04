@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=lz4
-VERSION=1.10.0
-RELEASE=1
-DEPENDS=glibc
-SOURCE=https://github.com/lz4/lz4/archive/refs/tags/v$VERSION.tar.gz
-LICENSE="GPL-2.0-or-later"
+name=lz4
+version=1.10.0
+release=1
+depends=glibc
+source=https://github.com/lz4/lz4/archive/refs/tags/v$version.tar.gz
+license="GPL-2.0-or-later"
 
 build()
 {

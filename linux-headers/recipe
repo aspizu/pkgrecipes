@@ -1,10 +1,10 @@
 #!/usr/bin/bash
 
-NAME=linux-headers
-VERSION=6.16.1
-RELEASE=1
-SOURCE=https://www.kernel.org/pub/linux/kernel/v6.x/linux-$VERSION.tar.xz
-LICENSE="GPL-2.0-only"
+name=linux-headers
+version=6.16.1
+release=1
+source=https://www.kernel.org/pub/linux/kernel/v6.x/linux-$version.tar.xz
+license="GPL-2.0-only"
 
 build()
 {

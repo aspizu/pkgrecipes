@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=gawk
-VERSION=5.3.2
-RELEASE=1
-DEPENDS=glibc,mpfr,sh
-SOURCE=https://ftp.gnu.org/gnu/gawk/gawk-$VERSION.tar.xz
-LICENSE="GPL-3.0-or-later"
+name=gawk
+version=5.3.2
+release=1
+depends=glibc,mpfr,sh
+source=https://ftp.gnu.org/gnu/gawk/gawk-$version.tar.xz
+license="GPL-3.0-or-later"
 
 build()
 {

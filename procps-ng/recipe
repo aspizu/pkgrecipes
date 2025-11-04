@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=procps-ng
-VERSION=4.0.5
-RELEASE=1
-DEPENDS=glibc,ncurses
-SOURCE=https://sourceforge.net/projects/procps-ng/files/Production/procps-ng-$VERSION.tar.xz
-LICENSE="LGPL"
+name=procps-ng
+version=4.0.5
+release=1
+depends=glibc,ncurses
+source=https://sourceforge.net/projects/procps-ng/files/Production/procps-ng-$version.tar.xz
+license="LGPL"
 
 build()
 {

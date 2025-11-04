@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=patch
-VERSION=2.8
-RELEASE=1
-DEPENDS=glibc,attr
-SOURCE=https://ftp.gnu.org/gnu/patch/patch-$VERSION.tar.xz
-LICENSE="GPL-3.0-or-later"
+name=patch
+version=2.8
+release=1
+depends=glibc,attr
+source=https://ftp.gnu.org/gnu/patch/patch-$version.tar.xz
+license="GPL-3.0-or-later"
 
 build()
 {

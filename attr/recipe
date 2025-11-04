@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=attr
-VERSION=2.5.2
-RELEASE=1
-DEPENDS=glibc
-SOURCE=https://download.savannah.gnu.org/releases/attr/attr-$VERSION.tar.gz
-LICENSE="LGPL-2.1-or-later AND GPL-2.0-or-later"
+name=attr
+version=2.5.2
+release=1
+depends=glibc
+source=https://download.savannah.gnu.org/releases/attr/attr-$version.tar.gz
+license="LGPL-2.1-or-later AND GPL-2.0-or-later"
 
 build()
 {

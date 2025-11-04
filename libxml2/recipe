@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=libxml2
-VERSION=2.14.5
-RELEASE=1
-DEPENDS=glibc,bash,icu,readline,zlib
-SOURCE=https://download.gnome.org/sources/libxml2/2.14/libxml2-$VERSION.tar.xz
-LICENSE="MIT"
+name=libxml2
+version=2.14.5
+release=1
+depends=glibc,bash,icu,readline,zlib
+source=https://download.gnome.org/sources/libxml2/2.14/libxml2-$version.tar.xz
+license="MIT"
 
 build()
 {

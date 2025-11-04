@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=gcc
-VERSION=15.2.0
-RELEASE=1
-DEPENDS=glibc,binutils,mpc,zlib,zstd
-SOURCE=https://ftp.gnu.org/gnu/gcc/gcc-$VERSION/gcc-$VERSION.tar.xz
-LICENSE="GPL-3.0-or-later"
+name=gcc
+version=15.2.0
+release=1
+depends=glibc,binutils,mpc,zlib,zstd
+source=https://ftp.gnu.org/gnu/gcc/gcc-$version/gcc-$version.tar.xz
+license="GPL-3.0-or-later"
 
 build()
 {

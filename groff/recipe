@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=groff
-VERSION=1.23.0
-RELEASE=1
-DEPENDS=glibc,perl,gcc
-SOURCE=https://ftp.gnu.org/gnu/groff/groff-$VERSION.tar.gz
-LICENSE="GPL-3.0-or-later"
+name=groff
+version=1.23.0
+release=1
+depends=glibc,perl,gcc
+source=https://ftp.gnu.org/gnu/groff/groff-$version.tar.gz
+license="GPL-3.0-or-later"
 
 build()
 {

@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=mpc
-VERSION=1.3.1
-RELEASE=1
-DEPENDS=glibc
-SOURCE=https://ftp.gnu.org/gnu/mpc/mpc-$VERSION.tar.gz
-LICENSE="GPL-2.0-or-later"
+name=mpc
+version=1.3.1
+release=1
+depends=glibc
+source=https://ftp.gnu.org/gnu/mpc/mpc-$version.tar.gz
+license="GPL-2.0-or-later"
 
 build()
 {

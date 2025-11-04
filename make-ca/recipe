@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=make-ca
-VERSION=1.16.1
-RELEASE=1
-DEPENDS=openssl,p11-kit,coreutils,sed,gawk
-SOURCE=https://github.com/lfs-book/make-ca/archive/v$VERSION/make-ca-$VERSION.tar.gz
-LICENSE="MIT"
+name=make-ca
+version=1.16.1
+release=1
+depends=openssl,p11-kit,coreutils,sed,gawk
+source=https://github.com/lfs-book/make-ca/archive/v$version/make-ca-$version.tar.gz
+license="MIT"
 
 build()
 {

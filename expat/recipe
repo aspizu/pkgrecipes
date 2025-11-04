@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=expat
-VERSION=2.7.1
-RELEASE=1
-DEPENDS=glibc
-SOURCE=https://github.com/libexpat/libexpat/releases/download/R_${VERSION//./_}/expat-$VERSION.tar.xz
-LICENSE="MIT"
+name=expat
+version=2.7.1
+release=1
+depends=glibc
+source=https://github.com/libexpat/libexpat/releases/download/R_${VERSION//./_}/expat-$version.tar.xz
+license="MIT"
 
 build()
 {

@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=systemd-boot
-VERSION=257.8
-RELEASE=1
-DEPENDS=glibc,libcap,zlib,zstd,acl
-SOURCE=https://github.com/systemd/systemd/archive/v$VERSION/systemd-$VERSION.tar.gz
-LICENSE="LGPL-2.1-or-later"
+name=systemd-boot
+version=257.8
+release=1
+depends=glibc,libcap,zlib,zstd,acl
+source=https://github.com/systemd/systemd/archive/v$version/systemd-$version.tar.gz
+license="LGPL-2.1-or-later"
 
 build()
 {

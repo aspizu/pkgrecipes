@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=icu
-VERSION=77.1
-RELEASE=1
-DEPENDS=glibc,gcc,sh
-SOURCE=https://github.com/unicode-org/icu/releases/download/release-${VERSION//./-/}/icu4c-${VERSION//./_/}-src.tgz
-LICENSE="BSD-2-Clause OR BSD-3-Clause"
+name=icu
+version=77.1
+release=1
+depends=glibc,gcc,sh
+source=https://github.com/unicode-org/icu/releases/download/release-${VERSION//./-/}/icu4c-${VERSION//./_/}-src.tgz
+license="BSD-2-Clause OR BSD-3-Clause"
 
 build()
 {

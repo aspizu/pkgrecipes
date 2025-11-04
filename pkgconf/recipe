@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=pkgconf
-VERSION=2.5.1
-RELEASE=1
-DEPENDS=glibc
-SOURCE=https://distfiles.ariadne.space/pkgconf/pkgconf-$VERSION.tar.xz
-LICENSE="ISC"
+name=pkgconf
+version=2.5.1
+release=1
+depends=glibc
+source=https://distfiles.ariadne.space/pkgconf/pkgconf-$version.tar.xz
+license="ISC"
 
 build()
 {

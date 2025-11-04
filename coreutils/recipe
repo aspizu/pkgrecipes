@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=coreutils
-VERSION=9.8
-RELEASE=1
-DEPENDS=glibc,acl,attr,gmp,libcap,openssl
-SOURCE=https://ftp.gnu.org/gnu/coreutils/coreutils-$VERSION.tar.xz
-LICENSE="GPL-3.0-or-later"
+name=coreutils
+version=9.8
+release=1
+depends=glibc,acl,attr,gmp,libcap,openssl
+source=https://ftp.gnu.org/gnu/coreutils/coreutils-$version.tar.xz
+license="GPL-3.0-or-later"
 
 build()
 {

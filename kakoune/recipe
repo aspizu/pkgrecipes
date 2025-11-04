@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
-NAME=kakoune
-VERSION=2025.06.03
-RELEASE=1
-DEPENDS=glibc
-SOURCE=https://github.com/mawww/kakoune/releases/download/v$VERSION/kakoune-$VERSION.tar.bz2
-LICENSE="Unlicense"
+name=kakoune
+version=2025.06.03
+release=1
+depends=glibc
+source=https://github.com/mawww/kakoune/releases/download/v$version/kakoune-$version.tar.bz2
+license="Unlicense"
 
 build()
 {
