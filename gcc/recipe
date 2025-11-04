@@ -28,7 +28,7 @@ build()
                 --disable-fixincludes    \
                 --with-system-zlib
     make
-    make DESTDIR=$DESTDIR install
+    make DESTDIR=$DESTDIR install-strip
     mkdir -p $DESTDIR/usr/lib/bfd-plugins
     ln -sr /usr/bin/cpp $DESTDIR/usr/lib
     ln -s gcc $DESTDIR/usr/bin/cc
