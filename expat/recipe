@@ -4,7 +4,7 @@ name=expat
 version=2.7.1
 release=1
 depends=glibc
-source=https://github.com/libexpat/libexpat/releases/download/R_${VERSION//./_}/expat-$version.tar.xz
+source=https://github.com/libexpat/libexpat/releases/download/R_${version//./_}/expat-$version.tar.xz
 license="MIT"
 
 build()
