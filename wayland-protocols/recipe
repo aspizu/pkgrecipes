@@ -11,5 +11,5 @@ build()
 {
     meson setup --prefix=/usr --buildtype=release build
     ninja -C build
-    meson install -C build --destdir=$pkgdir
+    meson install -C build --destdir=$DESTDIR
 }
