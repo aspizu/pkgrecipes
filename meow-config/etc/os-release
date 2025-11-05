@@ -1,0 +1,6 @@
+name="meowOS"
+version="12.4"
+ID=meowOS
+PRETTY_NAME="meowOS 12.4"
+HOME_URL="https://tilde.club/~aspizu/"
+RELEASE_TYPE="stable"
