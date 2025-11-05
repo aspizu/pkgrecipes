@@ -16,5 +16,5 @@ build()
         --disable-dbus
     make
     make DESTDIR=$DESTDIR install
-    install -Dm644 $recipe/daemon $DESTDIR/etc/init.d/iwd
+    install -Dm644 $recipe/daemon $DESTDIR/etc/rc.d/init.d/iwd
 }
