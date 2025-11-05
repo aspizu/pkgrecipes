@@ -10,7 +10,7 @@ license="GPL-2.0-only"
 build()
 {
     make
-    make DESTDIR=$DESTDIR install
+    make DESTDIR=$DESTDIR base_bindir=/usr/bin base_sbindir=/usr/sbin install
     cat > $DESTDIR/etc/inittab << "EOF"
 # Begin /etc/inittab
 
