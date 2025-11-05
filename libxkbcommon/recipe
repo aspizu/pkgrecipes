@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+name=libxkbcommon
+version=1.11.0
+release=1
+depends=glibc,wayland,wayland-protocols,libxml2
+source=https://github.com/lfs-book/libxkbcommon/archive/v1.11.0/libxkbcommon-1.11.0.tar.gz
+license="MIT"
+
+build()
+{
+    meson setup build
+    meson compile -C build
+    meson install -C build --destdir $DESTDIR
+}
