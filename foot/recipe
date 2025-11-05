@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+name=foot
+version=1.25.0
+release=1
+depends=glibc,libxkbcommon,fontconfig,ncurses,pixman,wayland
+source=https://codeberg.org/dnkl/foot/archive/$version.tar.gz
+license="MIT"
+
+build()
+{
+    meson setup --prefix=/usr -Ddefault-terminfo=foot -Dterminfo-base-name=foot-extra build
+    ninja -C build install
+}
