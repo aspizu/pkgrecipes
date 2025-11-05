@@ -9,7 +9,7 @@ license="MIT"
 
 build()
 {
-    meson setup build
+    meson setup -Denable-x11=false build
     meson compile -C build
     meson install -C build --destdir $DESTDIR
 }
