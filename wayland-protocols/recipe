@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+name=wayland-protocols
+version=1.45
+release=1
+depends=glibc,wayland
+source=https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/$version/downloads/wayland-protocols-$version.tar.xz
+license="MIT"
+
+build()
+{
+    meson setup --prefix=/usr --buildtype=release build
+    ninja -C build
+    meson install -C build --destdir=$pkgdir
+}
