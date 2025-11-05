@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+name=freetype
+version=2.13.3
+release=1
+depends=harfbuzz,libpng,which
+source=https://download.sourceforge.net/freetype/freetype-${version}.tar.xz
+license="FTL OR GPL-2.0-or-later"
+
+build()
+{
+    sed -ri "s:.*(AUX_MODULES.*valid):\1:" modules.cfg
+    sed -r "s:.*(#.*SUBPIXEL_RENDERING) .*:\1:" \
+        -i include/freetype/config/ftoption.h
+    ./configure --prefix=/usr --enable-freetype-config --disable-static
+    make
+    make DESTDIR=$DESTDIR install
+}

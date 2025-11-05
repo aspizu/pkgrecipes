@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+name=pixman
+version=0.46.1
+release=1
+depends=glibc
+source=https://www.cairographics.org/releases/pixman-$version.tar.gz
+license="MIT"
+
+build()
+{
+    meson setup --prefix=/usr --buildtype=release build
+    ninja -C build
+    meson install -C build
+}

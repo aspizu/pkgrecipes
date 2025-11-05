@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+name=libpng
+version=1.6.50
+release=1
+depends=glibc,zlib,sh
+source=https://downloads.sourceforge.net/libpng/libpng-$version.tar.xz
+license="libpng-2.0"
+
+build()
+{
+    ./configure --prefix=/usr --disable-static
+    make
+    make DESTDIR=$DESTDIR install
+}

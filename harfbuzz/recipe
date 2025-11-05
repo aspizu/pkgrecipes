@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+name=harfbuzz
+version=11.4.1
+release=1
+depends=glibc,icu,freetype
+source=https://github.com/harfbuzz/harfbuzz/releases/download/$version/harfbuzz-$version.tar.xz
+license="MIT"
+
+build()
+{
+    meson setup --prefix=/usr --buildtype=release -Dgraphite2=disabled build
+    ninja -C build
+    meson install -C build --destdir $DESTDIR
+}

@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+name=which
+version=2.23
+release=1
+depends=glibc
+source=https://ftp.gnu.org/gnu/which/which-$version.tar.gz
+license="GPL-3.0-or-later"
+
+build()
+{
+    ./configure --prefix=/usr
+    make
+    make DESTDIR=$DESTDIR install
+}
