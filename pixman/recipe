@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 name=pixman
-version=0.46.1
+version=0.46.4
 release=1
 depends=glibc
 source=https://www.cairographics.org/releases/pixman-$version.tar.gz

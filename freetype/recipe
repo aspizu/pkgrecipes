@@ -3,7 +3,7 @@
 name=freetype
 version=2.13.3
 release=1
-depends=harfbuzz,libpng,which
+depends=harfbuzz,libpng,which,zlib
 source=https://download.sourceforge.net/freetype/freetype-${version}.tar.xz
 license="FTL OR GPL-2.0-or-later"
 
